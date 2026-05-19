@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parte 2 · Manual web de Estructura de Datos</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- FONDO -->
+  <div class="background-glow"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <div class="logo-circle">
+        <i class="fa-solid fa-database"></i>
+      </div>
+
+      <div>
+        <h2>Logic Structures</h2>
+        <p>Manual Web 2026</p>
+      </div>
+
+    </div>
+
+    <!-- MENÚ -->
+    <nav class="menu">
+
+      <a href="#" class="nav-link active" data-page="inicio">
+        <i class="fa-solid fa-house"></i>
+        Inicio
+      </a>
+
+      <a href="#" class="nav-link" data-page="01-introduccion">
+        <i class="fa-solid fa-book"></i>
+        Introducción
+      </a>
+
+      <a href="#" class="nav-link" data-page="02-arrays">
+        <i class="fa-solid fa-layer-group"></i>
+        Arrays
+      </a>
+
+      <a href="#" class="nav-link" data-page="03-listas-simples">
+        <i class="fa-solid fa-link"></i>
+        Listas Simples
+      </a>
+
+      <a href="#" class="nav-link" data-page="04-listas-dobles-circulares">
+        <i class="fa-solid fa-code-branch"></i>
+        Listas Dobles
+      </a>
+
+      <a href="#" class="nav-link" data-page="05-pilas">
+        <i class="fa-solid fa-box"></i>
+        Pilas
+      </a>
+
+      <a href="#" class="nav-link" data-page="06-colas">
+        <i class="fa-solid fa-list"></i>
+        Colas
+      </a>
+
+      <a href="#" class="nav-link" data-page="07-tablas-hash">
+        <i class="fa-solid fa-table"></i>
+        Tablas Hash
+      </a>
+
+      <a href="#" class="nav-link" data-page="08-arboles-binarios">
+        <i class="fa-solid fa-tree"></i>
+        Árboles
+      </a>
+
+      <a href="#" class="nav-link" data-page="09-bst">
+  <i class="fa-solid fa-diagram-project"></i>
+  Árboles BST
+</a>
+
+<a href="#" class="nav-link" data-page="10-avl">
+  <i class="fa-solid fa-code-branch"></i>
+  Árboles AVL
+</a>
+
+      <a href="#" class="nav-link" data-page="11-grafos">
+        <i class="fa-solid fa-circle-nodes"></i>
+        Grafos
+      </a>
+
+      <a href="#" class="nav-link" data-page="12-complejidad">
+  <i class="fa-solid fa-chart-line"></i>
+  Complejidad algorítmica
+</a>
+
+    </nav>
+
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+      <div>
+        <h1>Parte 2 · Manual web de Estructura de Datos</h1>
+        <p>Plataforma interactiva profesional · Edición 2026</p>
+      </div>
+
+      <button class="theme-btn">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="tag">
+          Plataforma Interactiva
+        </span>
+
+        <h2>
+          Aprende estructuras de datos
+          con una experiencia visual moderna.
+        </h2>
+
+        <p>
+          Manual web avanzado con explicaciones,
+          ejemplos, visualizaciones y contenido interactivo.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="primary-btn">
+            Explorar Manual
+          </button>
+
+          <button class="secondary-btn">
+            Ver Temas
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="hero-card">
+
+        <div class="floating-card">
+
+          <div class="card-header">
+            <span class="dot purple"></span>
+            <span class="dot blue"></span>
+            <span class="dot cyan"></span>
+          </div>
+
+<pre>
+struct Nodo {
+  int dato;
+  Nodo* siguiente;
+};
+</pre>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTENIDO DINÁMICO -->
+    <section id="dynamic-content"></section>
+    <!-- DASHBOARD -->
+
+<section class="dashboard-section">
+
+  <div class="dashboard-grid">
+
+    <div class="dashboard-card">
+
+      <span class="dashboard-number">
+        12
+      </span>
+
+      <div>
+
+        <h3>Temas principales</h3>
+
+        <p>
+          Contenido completo de estructuras de datos.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+      <span class="dashboard-number">
+        Java
+      </span>
+
+      <div>
+
+        <h3>Ejemplos prácticos</h3>
+
+        <p>
+          Código real estructurado paso a paso.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+      <span class="dashboard-number">
+        UI
+      </span>
+
+      <div>
+
+        <h3>Interfaz moderna</h3>
+
+        <p>
+          Diseño futurista responsive estilo 2026.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- TARJETAS -->
+    <section class="cards-section">
+
+      <div class="section-title">
+        <h3>Temas principales</h3>
+      </div>
+
+      <div class="cards-grid">
+
+       <div class="info-card">
+  <i class="fa-solid fa-layer-group"></i>
+  <h4>Arrays</h4>
+  <p>Estructuras secuenciales y acceso por índices.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-link"></i>
+  <h4>Listas simples</h4>
+  <p>Nodos enlazados dinámicamente.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-code-branch"></i>
+  <h4>Listas dobles y circulares</h4>
+  <p>Conexiones bidireccionales y estructuras circulares.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-box"></i>
+  <h4>Pilas</h4>
+  <p>Estructura LIFO (último en entrar, primero en salir).</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-list"></i>
+  <h4>Colas</h4>
+  <p>Estructura FIFO y variantes de procesamiento.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-table"></i>
+  <h4>Tablas Hash</h4>
+  <p>Búsqueda eficiente mediante funciones hash.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-tree"></i>
+  <h4>Árboles binarios</h4>
+  <p>Estructura jerárquica de nodos.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-diagram-project"></i>
+  <h4>BST</h4>
+  <p>Árbol binario de búsqueda ordenado.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-code-branch"></i>
+  <h4>AVL</h4>
+  <p>Árbol balanceado para optimización de búsquedas.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-circle-nodes"></i>
+  <h4>Grafos</h4>
+  <p>Relaciones entre nodos y redes complejas.</p>
+</div>
+
+<div class="info-card">
+  <i class="fa-solid fa-chart-line"></i>
+  <h4>Complejidad algorítmica</h4>
+  <p>Análisis de eficiencia Big-O en algoritmos.</p>
+</div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

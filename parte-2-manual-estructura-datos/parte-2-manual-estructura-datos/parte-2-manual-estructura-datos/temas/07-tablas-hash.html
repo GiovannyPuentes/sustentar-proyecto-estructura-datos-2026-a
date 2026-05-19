@@ -1,0 +1,673 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 7
+    </span>
+
+    <h1>
+      Tablas Hash
+    </h1>
+
+    <p>
+      Estructuras de acceso rápido mediante pares
+      clave-valor y funciones hash.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de tabla hash
+      </h3>
+
+      <p>
+        Una tabla hash es una estructura de datos
+        que almacena pares clave-valor,
+        donde cada clave se transforma mediante
+        una función hash en una posición dentro
+        de una tabla.
+      </p>
+
+      <p>
+        Esto permite acceder, insertar y eliminar
+        datos de forma muy rápida,
+        generalmente en tiempo constante O(1).
+      </p>
+
+    </div>
+
+    <!-- FUNCIÓN HASH -->
+
+    <div class="content-card">
+
+      <h3>
+        Función hash
+      </h3>
+
+      <p>
+        Es un algoritmo que convierte una clave
+        en un índice numérico dentro del arreglo.
+      </p>
+
+      <p>
+        Una buena función hash distribuye
+        los datos de manera uniforme
+        para evitar colisiones.
+      </p>
+
+    </div>
+
+    <!-- COLISIONES -->
+
+    <div class="content-card">
+
+      <h3>
+        Colisiones
+      </h3>
+
+      <p>
+        Ocurren cuando dos claves diferentes
+        generan el mismo índice.
+      </p>
+
+      <p>
+        Existen técnicas para resolverlas:
+      </p>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Encadenamiento (chaining):</strong>
+          Cada posición almacena una lista de elementos.
+        </li>
+
+        <li>
+          <strong>Direccionamiento abierto:</strong>
+          Se busca otra posición disponible
+          dentro de la tabla.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- OPERACIONES -->
+
+    <div class="content-card">
+
+      <h3>
+        Operaciones básicas de una tabla hash
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>put (insertar):</strong>
+          Agrega un par clave-valor.
+        </li>
+
+        <li>
+          <strong>get (obtener):</strong>
+          Recupera el valor asociado a una clave.
+        </li>
+
+        <li>
+          <strong>remove (eliminar):</strong>
+          Elimina un elemento por su clave.
+        </li>
+
+        <li>
+          <strong>containsKey:</strong>
+          Verifica si una clave existe.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de la tabla hash
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Acceso rápido a los datos.
+        </li>
+
+        <li>
+          No mantiene orden de los elementos.
+        </li>
+
+        <li>
+          Depende de una buena función hash.
+        </li>
+
+        <li>
+          Puede manejar colisiones.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de la tabla hash
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Búsqueda, inserción y eliminación
+          muy rápidas.
+        </li>
+
+        <li>
+          Ideal para grandes volúmenes de datos.
+        </li>
+
+        <li>
+          Eficiente en comparación con listas
+          o arreglos para búsquedas.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Desventajas de la tabla hash
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Puede tener colisiones.
+        </li>
+
+        <li>
+          No mantiene orden.
+        </li>
+
+        <li>
+          Puede consumir más memoria.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Usos comunes
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Bases de datos (índices).
+        </li>
+
+        <li>
+          Sistemas de autenticación
+          (usuarios y contraseñas).
+        </li>
+
+        <li>
+          Diccionarios y mapas.
+        </li>
+
+        <li>
+          Cachés de datos.
+        </li>
+
+        <li>
+          Conteo de frecuencias.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Registro de estudiantes con clave
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema académico guarda estudiantes
+        usando un código único como clave
+        y su nombre como valor.
+      </p>
+
+      <p>
+        Luego permite consultar un estudiante
+        por su código.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una tabla hash vacía.
+2. Insertar varios estudiantes (clave, nombre).
+3. Buscar un estudiante por su clave.
+4. Mostrar el resultado.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        HashMap&lt;String, String&gt; estudiantes =
+            new HashMap&lt;&gt;();
+
+        estudiantes.put("E01", "Carlos");
+        estudiantes.put("E02", "María");
+        estudiantes.put("E03", "Juan");
+        estudiantes.put("E04", "Laura");
+
+        System.out.println(
+            "===== REGISTRO DE ESTUDIANTES ====="
+        );
+
+        String codigo = "E03";
+
+        System.out.println(
+            "Buscando estudiante con código "
+            + codigo
+        );
+
+        if (estudiantes.containsKey(codigo)) {
+
+            System.out.println(
+                "Estudiante: "
+                + estudiantes.get(codigo)
+            );
+
+        } else {
+
+            System.out.println(
+                "Estudiante no encontrado."
+            );
+
+        }
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== REGISTRO DE ESTUDIANTES =====
+
+Buscando estudiante con código E03
+
+Estudiante: Juan
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Conteo de palabras
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un programa cuenta cuántas veces aparece
+        cada palabra en un texto
+        utilizando una tabla hash.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una tabla hash vacía.
+2. Leer un texto.
+3. Separar el texto en palabras.
+
+4. Para cada palabra:
+
+   a. Si existe, incrementar contador.
+   b. Si no existe, agregar con valor 1.
+
+5. Mostrar resultados.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        String texto =
+            "hola mundo hola java mundo hola";
+
+        HashMap&lt;String, Integer&gt; conteo =
+            new HashMap&lt;&gt;();
+
+        String[] palabras = texto.split(" ");
+
+        for (String palabra : palabras) {
+
+            if (conteo.containsKey(palabra)) {
+
+                conteo.put(
+                    palabra,
+                    conteo.get(palabra) + 1
+                );
+
+            } else {
+
+                conteo.put(palabra, 1);
+
+            }
+
+        }
+
+        System.out.println(
+            "===== CONTEO DE PALABRAS ====="
+        );
+
+        for (String palabra : conteo.keySet()) {
+
+            System.out.println(
+                palabra + ": "
+                + conteo.get(palabra)
+            );
+
+        }
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== CONTEO DE PALABRAS =====
+
+hola: 3
+mundo: 2
+java: 1
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>
+      Retos
+    </h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Agenda telefónica
+      </h3>
+
+      <p>
+        Crear una agenda donde se almacenen
+        nombres como clave y números telefónicos
+        como valor.
+      </p>
+
+      <p>
+        El sistema debe permitir
+        buscar un contacto.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una tabla hash.
+        </li>
+
+        <li>
+          La clave será el nombre.
+        </li>
+
+        <li>
+          El valor será el número.
+        </li>
+
+        <li>
+          Permite buscar contactos.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== AGENDA TELEFÓNICA =====
+
+Contactos:
+
+Juan -> 12345
+Ana -> 67890
+Pedro -> 54321
+
+Buscando a Ana...
+
+Número: 67890
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Control de acceso
+      </h3>
+
+      <p>
+        Un sistema almacena usuarios
+        y contraseñas en una tabla hash.
+      </p>
+
+      <p>
+        Debe verificar si un usuario
+        puede iniciar sesión.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa clave-valor
+          (usuario-contraseña).
+        </li>
+
+        <li>
+          Verifica si el usuario existe.
+        </li>
+
+        <li>
+          Compara la contraseña ingresada.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== CONTROL DE ACCESO =====
+
+Usuario: admin
+
+Contraseña: 1234
+
+Acceso permitido
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con el tema de tablas hash.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/RplZeK1bO4k"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

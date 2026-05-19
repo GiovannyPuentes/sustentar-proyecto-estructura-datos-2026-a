@@ -1,0 +1,451 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 11
+    </span>
+
+    <h1>
+      Grafos: conceptos y presentación
+    </h1>
+
+    <p>
+      Estructuras de datos no lineales basadas en nodos y conexiones.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <div class="content-card">
+
+      <h3>Definición de grafo</h3>
+
+      <p>
+        Un grafo es una estructura de datos no lineal formada por un conjunto de nodos (vértices) y conexiones (aristas) que relacionan dichos nodos. Se utiliza para representar relaciones entre elementos.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Elementos de un grafo</h3>
+
+      <ul class="professional-list">
+
+        <li><strong>Vértice (nodo):</strong> Representa un elemento.</li>
+        <li><strong>Arista:</strong> Conecta dos vértices.</li>
+        <li><strong>Peso:</strong> Valor asociado a una arista (opcional).</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Tipos de grafos</h3>
+
+      <ul class="professional-list">
+
+        <li><strong>Dirigido:</strong> Las aristas tienen dirección.</li>
+        <li><strong>No dirigido:</strong> Las conexiones son bidireccionales.</li>
+        <li><strong>Ponderado:</strong> Tiene pesos en las aristas.</li>
+        <li><strong>No ponderado:</strong> No tiene pesos.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Formas de representación</h3>
+
+      <ul class="professional-list">
+
+        <li>Matriz de adyacencia: Matriz donde se indica si existe conexión entre nodos.</li>
+        <li>Lista de adyacencia: Cada nodo almacena una lista de sus vecinos.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Operaciones básicas</h3>
+
+      <ul class="professional-list">
+
+        <li>Agregar vértice</li>
+        <li>Agregar arista</li>
+        <li>Recorrer grafo (DFS, BFS)</li>
+        <li>Buscar nodos</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Características de los grafos</h3>
+
+      <ul class="professional-list">
+
+        <li>Estructura no lineal.</li>
+        <li>Permiten múltiples conexiones.</li>
+        <li>Representan relaciones complejas.</li>
+        <li>Pueden tener ciclos.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Ventajas</h3>
+
+      <ul class="professional-list">
+
+        <li>Modelan problemas reales (redes, rutas, etc.).</li>
+        <li>Flexibilidad en conexiones.</li>
+        <li>Permiten algoritmos avanzados.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Desventajas</h3>
+
+      <ul class="professional-list">
+
+        <li>Mayor complejidad.</li>
+        <li>Consumen más memoria.</li>
+        <li>Implementación más difícil.</li>
+
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+
+        <li>Redes sociales.</li>
+        <li>Mapas y rutas (GPS).</li>
+        <li>Redes de computadoras.</li>
+        <li>Sistemas de recomendación.</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 1: Representación de un grafo con lista de adyacencia</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema representa un grafo no dirigido utilizando una lista de adyacencia y muestra las conexiones de cada vértice.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista de adyacencia vacía.
+2. Inicializar listas para cada vértice.
+3. Agregar aristas (conexiones bidireccionales).
+4. Mostrar el grafo.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        int vertices = 4;
+        List<List<Integer>> grafo = new ArrayList<>();
+
+        for (int i = 0; i < vertices; i++) {
+            grafo.add(new ArrayList<>());
+        }
+
+        grafo.get(0).add(1);
+        grafo.get(1).add(0);
+
+        grafo.get(0).add(2);
+        grafo.get(2).add(0);
+
+        grafo.get(1).add(3);
+        grafo.get(3).add(1);
+
+        System.out.println("===== GRAFO (LISTA DE ADYACENCIA) =====");
+
+        for (int i = 0; i < vertices; i++) {
+            System.out.print("Vértice " + i + " conectado con: ");
+            for (int vecino : grafo.get(i)) {
+                System.out.print(vecino + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== GRAFO (LISTA DE ADYACENCIA) =====
+Vértice 0 conectado con: 1 2
+Vértice 1 conectado con: 0 3
+Vértice 2 conectado con: 0
+Vértice 3 conectado con: 1
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 2: Representación de un grafo con matriz de adyacencia</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema representa un grafo usando una matriz para indicar conexiones entre nodos.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear matriz de tamaño n × n.
+2. Inicializar en 0.
+3. Agregar aristas colocando 1.
+4. Mostrar matriz.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+    public static void main(String[] args) {
+        int vertices = 4;
+        int[][] matriz = new int[vertices][vertices];
+
+        matriz[0][1] = 1;
+        matriz[1][0] = 1;
+
+        matriz[0][2] = 1;
+        matriz[2][0] = 1;
+
+        matriz[1][3] = 1;
+        matriz[3][1] = 1;
+
+        System.out.println("===== GRAFO (MATRIZ DE ADYACENCIA) =====");
+
+        for (int i = 0; i < vertices; i++) {
+            for (int j = 0; j < vertices; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== GRAFO (MATRIZ DE ADYACENCIA) =====
+0 1 1 0
+1 0 0 1
+1 0 0 0
+0 1 0 0
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <div class="challenge-card">
+
+      <h3>Reto 1: Recorrido en profundidad (DFS)</h3>
+
+      <p>
+        Implementar un recorrido DFS (Depth First Search) que visite todos los nodos de un grafo a partir de un nodo inicial yendo lo más profundo posible antes de regresar.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>Usa una lista de adyacencia.</li>
+        <li>Usa un arreglo de visitados para evitar ciclos.</li>
+        <li>Implementa recursividad o una pila.</li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== RECORRIDO DFS =====
+Nodos visitados desde el nodo 0:
+0 1 3 2
+</pre>
+
+      </div>
+
+    </div>
+
+    <div class="challenge-card">
+
+      <h3>Reto 2: Verificar si existe camino</h3>
+
+      <p>
+        Dado un grafo, determinar si existe un camino válido entre dos vértices específicos.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>Usa un algoritmo de recorrido (DFS o BFS).</li>
+        <li>Si durante el recorrido se llega al nodo destino, retorna verdadero.</li>
+        <li>Si el recorrido termina sin encontrarlo, retorna falso.</li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== VERIFICAR CAMINO =====
+¿Existe camino entre 0 y 3?: Sí
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con los Grafos.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/F5Xjpg0-NhM"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

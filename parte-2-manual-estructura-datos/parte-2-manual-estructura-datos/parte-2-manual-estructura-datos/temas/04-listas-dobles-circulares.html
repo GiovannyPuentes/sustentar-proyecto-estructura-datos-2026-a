@@ -1,0 +1,875 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 4
+    </span>
+
+    <h1>
+      Listas enlazadas dobles y circulares
+    </h1>
+
+    <p>
+      Fundamentos, características, ventajas y aplicaciones
+      de las listas enlazadas dobles y circulares.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN LISTA DOBLE -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de lista enlazada doble
+      </h3>
+
+      <p>
+        Una lista enlazada doble es una estructura de datos lineal
+        formada por nodos, donde cada nodo contiene tres partes:
+        el dato, una referencia al nodo siguiente
+        y una referencia al nodo anterior.
+        Esto permite recorrer la lista en ambos sentidos:
+        hacia adelante y hacia atrás.
+      </p>
+
+    </div>
+
+    <!-- DEFINICIÓN LISTA CIRCULAR -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de lista enlazada circular
+      </h3>
+
+      <p>
+        Una lista enlazada circular es una estructura de datos
+        en la que el último nodo no apunta a null,
+        sino al primer nodo de la lista.
+        De esta forma,
+        la estructura forma un ciclo continuo.
+      </p>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS DOBLE -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de la lista enlazada doble
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Cada nodo tiene referencia al anterior y al siguiente.
+        </li>
+
+        <li>
+          Permite recorrido bidireccional.
+        </li>
+
+        <li>
+          Facilita inserciones y eliminaciones en ambos extremos.
+        </li>
+
+        <li>
+          Requiere más memoria que una lista enlazada simple.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS CIRCULAR -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de la lista enlazada circular
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          El último nodo apunta al primero.
+        </li>
+
+        <li>
+          No tiene un final nulo.
+        </li>
+
+        <li>
+          Permite recorridos repetitivos
+          sin reiniciar la estructura.
+        </li>
+
+        <li>
+          Es útil cuando los datos
+          se procesan en ciclos o turnos.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS DOBLE -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de la lista doble
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Se puede avanzar y retroceder.
+        </li>
+
+        <li>
+          Es más flexible para navegación
+          en ambos sentidos.
+        </li>
+
+        <li>
+          Útil en historiales,
+          reproductores y editores.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS CIRCULAR -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de la lista circular
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Evita volver a empezar la lista manualmente.
+        </li>
+
+        <li>
+          Muy útil en sistemas de turnos
+          o procesos cíclicos.
+        </li>
+
+        <li>
+          Permite recorrer los elementos
+          de manera continua.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Navegación de historial.
+        </li>
+
+        <li>
+          Sistemas de reproducción
+          de música o video.
+        </li>
+
+        <li>
+          Gestión de turnos
+          (como en sistemas de atención al cliente).
+        </li>
+
+        <li>
+          Buffers circulares de memoria.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Historial de acciones
+      (Lista enlazada doble)
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un editor de texto necesita almacenar las acciones
+        realizadas por el usuario para permitir las opciones
+        de "Deshacer" (ir al anterior)
+        y "Rehacer" (ir al siguiente).
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista enlazada doble vacía.
+2. Registrar varias acciones de forma secuencial.
+3. Recorrer la lista hacia adelante para mostrar
+   el historial en orden cronológico.
+4. Recorrer la lista hacia atrás para simular
+   el proceso de deshacer acciones.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    // Clase Nodo Doble
+    static class NodoDoble {
+
+        String accion;
+        NodoDoble siguiente;
+        NodoDoble anterior;
+
+        NodoDoble(String accion) {
+
+            this.accion = accion;
+            this.siguiente = null;
+            this.anterior = null;
+
+        }
+
+    }
+
+    // Clase Lista Enlazada Doble
+    static class ListaDoble {
+
+        private NodoDoble cabeza;
+        private NodoDoble cola;
+
+        // Insertar al final
+        public void registrarAccion(String accion) {
+
+            NodoDoble nuevo =
+                new NodoDoble(accion);
+
+            if (cabeza == null) {
+
+                cabeza = nuevo;
+                cola = nuevo;
+
+            } else {
+
+                cola.siguiente = nuevo;
+                nuevo.anterior = cola;
+                cola = nuevo;
+
+            }
+
+        }
+
+        // Recorrer hacia adelante
+        public void recorrerAdelante() {
+
+            NodoDoble actual = cabeza;
+            int pos = 1;
+
+            while (actual != null) {
+
+                System.out.println(
+                    pos + ". " + actual.accion
+                );
+
+                pos++;
+                actual = actual.siguiente;
+
+            }
+
+        }
+
+        // Recorrer hacia atrás
+        public void recorrerAtras() {
+
+            NodoDoble actual = cola;
+            int pos = 1;
+
+            while (actual != null) {
+
+                System.out.println(
+                    pos + ". " + actual.accion
+                );
+
+                pos++;
+                actual = actual.anterior;
+
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        ListaDoble historial =
+            new ListaDoble();
+
+        historial.registrarAccion(
+            "Escribir texto"
+        );
+
+        historial.registrarAccion(
+            "Cambiar color"
+        );
+
+        historial.registrarAccion(
+            "Insertar imagen"
+        );
+
+        historial.registrarAccion(
+            "Borrar párrafo"
+        );
+
+        System.out.println(
+            "===== HISTORIAL DE ACCIONES (ADELANTE) ====="
+        );
+
+        historial.recorrerAdelante();
+
+        System.out.println(
+            "\n===== DESHACER ACCIONES (ATRÁS) ====="
+        );
+
+        historial.recorrerAtras();
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== HISTORIAL DE ACCIONES (ADELANTE) =====
+
+1. Escribir texto
+2. Cambiar color
+3. Insertar imagen
+4. Borrar párrafo
+
+===== DESHACER ACCIONES (ATRÁS) =====
+
+1. Borrar párrafo
+2. Insertar imagen
+3. Cambiar color
+4. Escribir texto
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Sistema de turnos
+      (Lista enlazada circular)
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema de atención distribuye turnos
+        entre varios asesores de forma continua.
+        Cuando llega al último asesor,
+        el siguiente turno vuelve
+        a asignarse al primero.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista enlazada circular
+   con los asesores disponibles.
+2. Enlazar el último nodo de vuelta
+   con el primero para cerrar el ciclo.
+3. Mostrar la lista de asesores
+   en una vuelta completa.
+4. Simular la asignación continua
+   avanzando de forma cíclica.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    // Clase Nodo Circular
+    static class NodoCircular {
+
+        String asesor;
+        NodoCircular siguiente;
+
+        NodoCircular(String asesor) {
+
+            this.asesor = asesor;
+            this.siguiente = null;
+
+        }
+
+    }
+
+    // Clase Lista Enlazada Circular
+    static class ListaCircular {
+
+        private NodoCircular cabeza = null;
+        private NodoCircular cola = null;
+        private NodoCircular actualPointer = null;
+
+        // Agregar asesor a la lista circular
+        public void agregarAsesor(String nombre) {
+
+            NodoCircular nuevo =
+                new NodoCircular(nombre);
+
+            if (cabeza == null) {
+
+                cabeza = nuevo;
+                cola = nuevo;
+
+                nuevo.siguiente = cabeza;
+
+                actualPointer = cabeza;
+
+            } else {
+
+                cola.siguiente = nuevo;
+                cola = nuevo;
+
+                cola.siguiente = cabeza;
+
+            }
+
+        }
+
+        // Contar elementos
+        public int contar() {
+
+            if (cabeza == null) {
+
+                return 0;
+
+            }
+
+            int contador = 0;
+            NodoCircular actual = cabeza;
+
+            do {
+
+                contador++;
+                actual = actual.siguiente;
+
+            } while (actual != cabeza);
+
+            return contador;
+
+        }
+
+        // Recorrer una vuelta completa
+        public void mostrarAsesores() {
+
+            if (cabeza == null) {
+
+                return;
+
+            }
+
+            NodoCircular actual = cabeza;
+            int pos = 1;
+
+            do {
+
+                System.out.println(
+                    pos + ". Asesor: " +
+                    actual.asesor
+                );
+
+                pos++;
+                actual = actual.siguiente;
+
+            } while (actual != cabeza);
+
+        }
+
+        // Obtener el asesor actual
+        // y avanzar al siguiente turno
+        public String avanzarTurno() {
+
+            if (actualPointer == null) {
+
+                return "No hay asesores";
+
+            }
+
+            String asesorAsignado =
+                actualPointer.asesor;
+
+            actualPointer =
+                actualPointer.siguiente;
+
+            return asesorAsignado;
+
+        }
+
+        public String obtenerActual() {
+
+            if (actualPointer == null) {
+
+                return "Ninguno";
+
+            }
+
+            return actualPointer.asesor;
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        ListaCircular turnos =
+            new ListaCircular();
+
+        turnos.agregarAsesor(
+            "Asesor Juan"
+        );
+
+        turnos.agregarAsesor(
+            "Asesor Ana"
+        );
+
+        turnos.agregarAsesor(
+            "Asesor Luis"
+        );
+
+        turnos.agregarAsesor(
+            "Asesor María"
+        );
+
+        System.out.println(
+            "===== SISTEMA DE TURNOS CIRCULAR ====="
+        );
+
+        System.out.println(
+            "Cantidad de turnos: " +
+            turnos.contar()
+        );
+
+        System.out.println(
+            "Listado de turnos:"
+        );
+
+        turnos.mostrarAsesores();
+
+        System.out.println(
+            "--------------------------------------"
+        );
+
+        System.out.println(
+            "Turno actual: " +
+            turnos.obtenerActual()
+        );
+
+        // Simulación de atención continua
+        System.out.println(
+            "Atendiendo en: " +
+            turnos.avanzarTurno()
+        );
+
+        System.out.println(
+            "Atendiendo en: " +
+            turnos.avanzarTurno()
+        );
+
+        System.out.println(
+            "Siguiente turno: " +
+            turnos.obtenerActual()
+        );
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== SISTEMA DE TURNOS CIRCULAR =====
+
+Cantidad de turnos: 4
+
+Listado de turnos:
+
+1. Asesor: Asesor Juan
+2. Asesor: Asesor Ana
+3. Asesor: Asesor Luis
+4. Asesor: Asesor María
+
+Turno actual: Asesor Juan
+
+Siguiente turno: Asesor Ana
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Historial de navegación
+      </h3>
+
+      <p>
+        Un navegador guarda las páginas visitadas
+        en una lista enlazada doble.
+        El sistema debe mostrar el historial
+        en orden normal y luego en orden inverso.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una lista doble para poder moverte
+          en ambos sentidos.
+        </li>
+
+        <li>
+          Guarda las páginas
+          en el orden en que fueron visitadas.
+        </li>
+
+        <li>
+          Recorre desde la cabeza hasta la cola
+          y luego al revés.
+        </li>
+
+        <li>
+          La última página visitada debe aparecer primero
+          en el recorrido inverso.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== HISTORIAL DE NAVEGACIÓN =====
+
+Páginas visitadas:
+
+1. Inicio
+2. Productos
+3. Carrito
+4. Pago
+
+Recorrido inverso:
+
+5. Pago
+6. Carrito
+7. Productos
+8. Inicio
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Rotación de tareas
+        en una lista circular
+      </h3>
+
+      <p>
+        Un equipo de trabajo utiliza una lista circular
+        para asignar tareas por turnos.
+        El sistema debe mostrar las tareas
+        en una vuelta completa
+        y luego avanzar al siguiente turno.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una estructura circular
+          para evitar finalizar la lista.
+        </li>
+
+        <li>
+          El último nodo debe apuntar al primero.
+        </li>
+
+        <li>
+          Muestra los elementos
+          una sola vuelta completa.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== GESTIÓN DE PRIORIDADES =====
+
+Lista de tareas:
+
+1. Atender emergencia
+2. Revisar documentos
+3. Preparar informe
+4. Enviar correo
+
+Tarea buscada: Preparar informe
+
+Resultado: Tarea encontrada
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con las Listas enlazadas dobles y circulares.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/tV_rhl9uzR4"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

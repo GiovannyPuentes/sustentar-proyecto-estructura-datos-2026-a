@@ -1,0 +1,625 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 5
+    </span>
+
+    <h1>
+      Pilas Stack
+    </h1>
+
+    <p>
+      Implementación de estructuras tipo pila,
+      operaciones LIFO y aplicaciones prácticas
+      en programación.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de pila (Stack)
+      </h3>
+
+      <p>
+        Una pila es una estructura de datos lineal
+        que sigue el principio LIFO
+        (Last In, First Out),
+        es decir, el último elemento en entrar
+        es el primero en salir.
+        Se puede imaginar como una pila de platos,
+        donde solo se puede agregar o quitar elementos
+        desde la parte superior.
+      </p>
+
+    </div>
+
+    <!-- OPERACIONES -->
+
+    <div class="content-card">
+
+      <h3>
+        Operaciones básicas de una pila
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Push (apilar):</strong>
+          Agrega un elemento en la parte superior
+          de la pila.
+        </li>
+
+        <li>
+          <strong>Pop (desapilar):</strong>
+          Elimina el elemento que está
+          en la parte superior.
+        </li>
+
+        <li>
+          <strong>Peek (cima):</strong>
+          Muestra el elemento superior
+          sin eliminarlo.
+        </li>
+
+        <li>
+          <strong>isEmpty (vacía):</strong>
+          Verifica si la pila está vacía.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de la pila
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Solo permite acceso al elemento superior.
+        </li>
+
+        <li>
+          Sigue el principio LIFO.
+        </li>
+
+        <li>
+          No permite acceso directo
+          a elementos intermedios.
+        </li>
+
+        <li>
+          Puede implementarse con arreglos
+          o listas enlazadas.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de la pila
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Estructura simple y fácil de implementar.
+        </li>
+
+        <li>
+          Útil para controlar procesos
+          con orden inverso.
+        </li>
+
+        <li>
+          Eficiente en inserción
+          y eliminación (O(1)).
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Desventajas de la pila
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Acceso limitado a un solo elemento
+          (la cima).
+        </li>
+
+        <li>
+          No es adecuada cuando se necesita
+          acceso aleatorio.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Usos comunes
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Deshacer y rehacer acciones (Undo/Redo).
+        </li>
+
+        <li>
+          Evaluación de expresiones matemáticas.
+        </li>
+
+        <li>
+          Navegación hacia atrás en aplicaciones.
+        </li>
+
+        <li>
+          Llamadas a funciones
+          (pila de ejecución).
+        </li>
+
+        <li>
+          Validación de paréntesis en código.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Registro de acciones (Undo)
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema guarda las acciones realizadas
+        por un usuario en una pila.
+        Cada nueva acción se agrega a la cima,
+        y cuando el usuario desea deshacer,
+        se elimina la última acción realizada.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una pila vacía.
+2. Agregar varias acciones usando push.
+3. Mostrar la acción en la cima.
+4. Eliminar la última acción con pop.
+5. Mostrar la nueva acción en la cima.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.Stack;
+
+public class Main {
+
+    public static void main(String args[]) {
+
+        Stack<String> acciones = new Stack<>();
+
+        acciones.push("Abrir archivo");
+        acciones.push("Editar texto");
+        acciones.push("Guardar cambios");
+        acciones.push("Cerrar archivo");
+
+        System.out.println(
+            "===== HISTORIAL DE ACCIONES ====="
+        );
+
+        System.out.println(
+            "Última acción: " + acciones.peek()
+        );
+
+        acciones.pop();
+
+        System.out.println(
+            "Se deshizo la última acción."
+        );
+
+        System.out.println(
+            "Nueva última acción: " + acciones.peek()
+        );
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== HISTORIAL DE ACCIONES =====
+
+Última acción: Cerrar archivo
+
+Se deshizo la última acción.
+
+Nueva última acción: Guardar cambios
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Validación de paréntesis
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un programa necesita verificar
+        si una expresión matemática
+        tiene los paréntesis correctamente
+        balanceados utilizando una pila.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una pila vacía.
+2. Recorrer cada carácter de la expresión.
+3. Si es "(", hacer push.
+4. Si es ")", hacer pop.
+5. Si en algún momento no hay qué desapilar, error.
+6. Al final, si la pila está vacía, es válida.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.Stack;
+
+public class Main {
+
+    public static boolean validarParentesis(
+        String expresion
+    ) {
+
+        Stack<Character> pila = new Stack<>();
+
+        for (int i = 0;
+             i < expresion.length();
+             i++) {
+
+            char c = expresion.charAt(i);
+
+            if (c == '(') {
+
+                pila.push(c);
+
+            } else if (c == ')') {
+
+                if (pila.isEmpty()) {
+
+                    return false;
+
+                }
+
+                pila.pop();
+
+            }
+
+        }
+
+        return pila.isEmpty();
+
+    }
+
+    public static void main(String[] args) {
+
+        String expresion = "(a+b)*(c+d)";
+
+        System.out.println(
+            "===== VALIDACIÓN DE PARENTESIS ====="
+        );
+
+        System.out.println(
+            "Expresión: " + expresion
+        );
+
+        if (validarParentesis(expresion)) {
+
+            System.out.println(
+                "La expresión es válida."
+            );
+
+        } else {
+
+            System.out.println(
+                "La expresión es incorrecta."
+            );
+
+        }
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== VALIDACIÓN DE PARENTESIS =====
+
+Expresión: (a+b)*(c+d)
+
+La expresión es válida.
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Historial de navegación
+        (solo retroceso)
+      </h3>
+
+      <p>
+        Un navegador almacena las páginas visitadas
+        en una pila.
+        El usuario solo puede regresar
+        a la página anterior
+        (no avanzar).
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una pila para guardar las páginas.
+        </li>
+
+        <li>
+          Cada nueva página se agrega con push.
+        </li>
+
+        <li>
+          Para volver atrás, usa pop.
+        </li>
+
+        <li>
+          La página actual es la que está en la cima.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== HISTORIAL DE NAVEGACIÓN =====
+
+Páginas visitadas:
+
+Inicio
+Productos
+Carrito
+Pago
+
+Página actual: Pago
+
+Regresando...
+
+Nueva página actual: Carrito
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Invertir una lista usando pila
+      </h3>
+
+      <p>
+        Un sistema necesita invertir
+        el orden de una lista de elementos
+        utilizando una pila.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Inserta todos los elementos en la pila.
+        </li>
+
+        <li>
+          Luego, desapílalos para obtener
+          el orden inverso.
+        </li>
+
+        <li>
+          La pila automáticamente invierte
+          el orden por su comportamiento LIFO.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== INVERSIÓN DE DATOS =====
+
+Lista original:
+
+12345
+
+Lista invertida:
+
+54321
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con el tema pilas.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/pzdpfd3j5ME"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

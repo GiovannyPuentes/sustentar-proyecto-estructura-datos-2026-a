@@ -1,0 +1,485 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 9
+    </span>
+
+    <h1>
+      Árboles binarios de búsqueda BST
+    </h1>
+
+    <p>
+      Árboles binarios de búsqueda, operaciones, características,
+      ventajas, desventajas y aplicaciones.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>Definición de árbol binario de búsqueda (BST)</h3>
+
+      <p>
+        Un árbol binario de búsqueda (BST, Binary Search Tree) es un tipo especial de árbol binario que mantiene un orden específico: Todos los valores del subárbol izquierdo son menores que el nodo raíz, y todos los valores del subárbol derecho son mayores. Esta propiedad permite realizar búsquedas, inserciones y eliminaciones de manera eficiente.
+      </p>
+
+    </div>
+
+    <!-- PROPIEDAD -->
+
+    <div class="content-card">
+
+      <h3>Propiedad fundamental del BST</h3>
+
+      <ul class="professional-list">
+
+        <li>Izquierda &lt; Raíz &lt; Derecha</li>
+        <li>Se cumple recursivamente en todo el árbol.</li>
+
+      </ul>
+
+    </div>
+
+    <!-- OPERACIONES -->
+
+    <div class="content-card">
+
+      <h3>Operaciones básicas de un BST</h3>
+
+      <ul class="professional-list">
+
+        <li><strong>Insertar:</strong> Ubica el valor en la posición correcta según su valor.</li>
+        <li><strong>Buscar:</strong> Compara el valor y decide si ir a la izquierda o derecha.</li>
+        <li><strong>Eliminar:</strong> Quita un nodo considerando tres casos: Nodo hoja, Nodo con un hijo o Nodo con dos hijos.</li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>Características del BST</h3>
+
+      <ul class="professional-list">
+
+        <li>Mantiene los datos ordenados.</li>
+        <li>Permite búsquedas eficientes.</li>
+        <li>Es una estructura dinámica.</li>
+        <li>Puede desbalancearse si los datos se insertan en orden.</li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>Ventajas del BST</h3>
+
+      <ul class="professional-list">
+
+        <li>Búsqueda rápida ($O(\log n)$ en promedio).</li>
+        <li>Inserción y eliminación eficientes.</li>
+        <li>Permite recorridos ordenados (inorden).</li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>Desventajas del BST</h3>
+
+      <ul class="professional-list">
+
+        <li>Puede volverse lento $(O(n))$ si está desbalanceado.</li>
+        <li>Requiere más lógica que estructuras simples.</li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+
+        <li>Bases de datos.</li>
+        <li>Sistemas de búsqueda.</li>
+        <li>Índices.</li>
+        <li>Estructuras jerárquicas ordenadas.</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 1: Inserción en un árbol binario de búsqueda</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema inserta varios valores en un BST y luego muestra el recorrido en inorden (ordenado).
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear un árbol vacío.
+
+2. Insertar valores:
+a. Si el valor es menor, ir a la izquierda.
+b. Si es mayor, ir a la derecha.
+
+3. Recorrer en inorden.
+
+4. Mostrar los valores ordenados.
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">Copiar código</button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+    static class Nodo {
+        int dato;
+        Nodo izquierdo;
+        Nodo derecho;
+
+        Nodo(int dato) {
+            this.dato = dato;
+        }
+    }
+
+    // Insertar en BST
+    public static Nodo insertar(Nodo raiz, int dato) {
+        if (raiz == null) {
+            return new Nodo(dato);
+        }
+        if (dato < raiz.dato) {
+            raiz.izquierdo = insertar(raiz.izquierdo, dato);
+        } else {
+            raiz.derecho = insertar(raiz.derecho, dato);
+        }
+        return raiz;
+    }
+
+    // Recorrido inorden
+    public static void inorden(Nodo nodo) {
+        if (nodo != null) {
+            inorden(nodo.izquierdo);
+            System.out.print(nodo.dato + " ");
+            inorden(nodo.derecho);
+        }
+    }
+
+    public static void main(String[] args) {
+        Nodo raiz = null;
+        raiz = insertar(raiz, 10);
+        insertar(raiz, 5);
+        insertar(raiz, 15);
+        insertar(raiz, 3);
+        insertar(raiz, 7);
+
+        System.out.println("===== ÁRBOL BINARIO DE BÚSQUEDA =====");
+        System.out.print("Recorrido en inorden: ");
+        inorden(raiz);
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== ÁRBOL BINARIO DE BÚSQUEDA =====
+Recorrido en inorden: 3 5 7 10 15
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 2: Eliminación de un nodo en un BST</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema elimina un valor de un árbol binario de búsqueda considerando los diferentes casos posibles.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Buscar el nodo a eliminar.
+
+2. Si es hoja, eliminar directamente.
+
+3. Si tiene un hijo, reemplazar por el hijo.
+
+4. Si tiene dos hijos:
+a. Buscar el sucesor (mínimo del subárbol derecho).
+b. Reemplazar el valor.
+c. Eliminar el sucesor.
+
+5. Mostrar el árbol actualizado.
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">Copiar código</button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+    static class Nodo {
+        int dato;
+        Nodo izquierdo;
+        Nodo derecho;
+
+        Nodo(int dato) {
+            this.dato = dato;
+        }
+    }
+
+    public static Nodo insertar(Nodo raiz, int dato) {
+        if (raiz == null) return new Nodo(dato);
+        if (dato < raiz.dato) {
+            raiz.izquierdo = insertar(raiz.izquierdo, dato);
+        } else {
+            raiz.derecho = insertar(raiz.derecho, dato);
+        }
+        return raiz;
+    }
+
+    // Encontrar el mínimo
+    public static Nodo minimo(Nodo nodo) {
+        while (nodo.izquierdo != null) {
+            nodo = nodo.izquierdo;
+        }
+        return nodo;
+    }
+
+    // Eliminar nodo
+    public static Nodo eliminar(Nodo raiz, int valor) {
+        if (raiz == null) return null;
+
+        if (valor < raiz.dato) {
+            raiz.izquierdo = eliminar(raiz.izquierdo, valor);
+        } else if (valor > raiz.dato) {
+            raiz.derecho = eliminar(raiz.derecho, valor);
+        } else {
+            if (raiz.izquierdo == null && raiz.derecho == null) {
+                return null;
+            }
+            if (raiz.izquierdo == null) return raiz.derecho;
+            if (raiz.derecho == null) return raiz.izquierdo;
+
+            Nodo sucesor = minimo(raiz.derecho);
+            raiz.dato = sucesor.dato;
+            raiz.derecho = eliminar(raiz.derecho, sucesor.dato);
+        }
+        return raiz;
+    }
+
+    public static void inorden(Nodo nodo) {
+        if (nodo != null) {
+            inorden(nodo.izquierdo);
+            System.out.print(nodo.dato + " ");
+            inorden(nodo.derecho);
+        }
+    }
+
+    public static void main(String[] args) {
+        Nodo raiz = null;
+        raiz = insertar(raiz, 10);
+        insertar(raiz, 5);
+        insertar(raiz, 15);
+        insertar(raiz, 3);
+        insertar(raiz, 7);
+
+        System.out.println("===== ELIMINACIÓN EN BST =====");
+        System.out.print("Árbol original: ");
+        inorden(raiz);
+        System.out.println();
+
+        raiz = eliminar(raiz, 5);
+        System.out.print("Árbol después de eliminar 5: ");
+        inorden(raiz);
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== ELIMINACIÓN EN BST =====
+Árbol original: 3 5 7 10 15
+Árbol después de eliminar 5: 3 7 10 15
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <div class="challenge-card">
+
+      <h3>Reto 1: Búsqueda en un BST</h3>
+
+      <p>Crear un programa que busque un valor dentro de un árbol binario de búsqueda.</p>
+
+      <h4>Pistas</h4>
+      <ul class="professional-list">
+        <li>Compara con el nodo actual.</li>
+        <li>Si es menor, ir a la izquierda.</li>
+        <li>Si es mayor, ir a la derecha.</li>
+        <li>Si es igual, encontrado.</li>
+      </ul>
+
+      <div class="output-container">
+        <div class="output-header">Salida esperada</div>
+<pre class="output-console">
+===== BÚSQUEDA EN BST =====
+Buscando: 7
+Resultado: Encontrado
+</pre>
+      </div>
+
+    </div>
+
+    <div class="challenge-card">
+
+      <h3>Reto 2: Encontrar el valor mínimo y máximo</h3>
+
+      <p>Determinar el valor mínimo y máximo dentro de un árbol binario de búsqueda.</p>
+
+      <h4>Pistas</h4>
+      <ul class="professional-list">
+        <li>El mínimo está en el nodo más a la izquierda.</li>
+        <li>El máximo está en el nodo más a la derecha.</li>
+      </ul>
+
+      <div class="output-container">
+        <div class="output-header">Salida esperada</div>
+<pre class="output-console">
+===== MÍNIMO Y MÁXIMO =====
+Mínimo: 3
+Máximo: 15
+</pre>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con los Árboles binarios de búsqueda BST.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/y3Vb972cjZM"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
