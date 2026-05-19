@@ -1,0 +1,679 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 8
+    </span>
+
+    <h1>
+      Árboles binarios
+    </h1>
+
+    <p>
+      Estructuras jerárquicas, recorridos,
+      operaciones y aplicaciones de árboles binarios.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de árbol binario
+      </h3>
+
+      <p>
+        Un árbol binario es una estructura de datos jerárquica
+        en la que cada nodo puede tener como máximo dos hijos:
+        un hijo izquierdo y un hijo derecho.
+        Se utiliza para organizar información de forma que facilite
+        la búsqueda y manipulación de datos.
+      </p>
+
+    </div>
+
+    <!-- ESTRUCTURA -->
+
+    <div class="content-card">
+
+      <h3>
+        Estructura de un árbol binario
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Nodo raíz:</strong>
+          Primer nodo del árbol.
+        </li>
+
+        <li>
+          <strong>Nodo padre:</strong>
+          Nodo que tiene hijos.
+        </li>
+
+        <li>
+          <strong>Nodo hijo:</strong>
+          Nodo que depende de otro.
+        </li>
+
+        <li>
+          <strong>Nodo hoja:</strong>
+          Nodo sin hijos.
+        </li>
+
+        <li>
+          <strong>Subárbol:</strong>
+          Cada hijo puede ser raíz de otro árbol.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- RECORRIDOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Tipos de recorridos en árboles binarios
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Preorden (Raíz - Izquierda - Derecha)
+        </li>
+
+        <li>
+          Inorden (Izquierda - Raíz - Derecha)
+        </li>
+
+        <li>
+          Postorden (Izquierda - Derecha - Raíz)
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de los árboles binarios
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Cada nodo tiene máximo dos hijos.
+        </li>
+
+        <li>
+          Estructura jerárquica.
+        </li>
+
+        <li>
+          Permite búsquedas eficientes.
+        </li>
+
+        <li>
+          Puede crecer dinámicamente.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de los árboles binarios
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Organización eficiente de datos.
+        </li>
+
+        <li>
+          Permite búsquedas rápidas
+          (especialmente en árboles balanceados).
+        </li>
+
+        <li>
+          Flexible para representar relaciones jerárquicas.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Desventajas de los árboles binarios
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Puede volverse ineficiente si no está balanceado.
+        </li>
+
+        <li>
+          Requiere más memoria que estructuras lineales.
+        </li>
+
+        <li>
+          Implementación más compleja.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Usos comunes
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Representación de estructuras jerárquicas.
+        </li>
+
+        <li>
+          Árboles de búsqueda (BST).
+        </li>
+
+        <li>
+          Expresiones matemáticas.
+        </li>
+
+        <li>
+          Sistemas de archivos.
+        </li>
+
+        <li>
+          Inteligencia artificial y juegos.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Creación y recorrido de un árbol binario
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema crea un árbol binario con valores numéricos
+        y luego muestra los recorridos en preorden,
+        inorden y postorden.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear nodos del árbol.
+
+2. Asignar hijos izquierdo y derecho.
+
+3. Recorrer el árbol en preorden.
+
+4. Recorrer el árbol en inorden.
+
+5. Recorrer el árbol en postorden.
+
+6. Mostrar resultados.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    static class Nodo {
+
+        int dato;
+        Nodo izquierdo;
+        Nodo derecho;
+
+        Nodo(int dato) {
+
+            this.dato = dato;
+            this.izquierdo = null;
+            this.derecho = null;
+
+        }
+
+    }
+
+    // Recorrido preorden
+    public static void preorden(Nodo nodo) {
+
+        if (nodo != null) {
+
+            System.out.print(nodo.dato + " ");
+            preorden(nodo.izquierdo);
+            preorden(nodo.derecho);
+
+        }
+
+    }
+
+    // Recorrido inorden
+    public static void inorden(Nodo nodo) {
+
+        if (nodo != null) {
+
+            inorden(nodo.izquierdo);
+            System.out.print(nodo.dato + " ");
+            inorden(nodo.derecho);
+
+        }
+
+    }
+
+    // Recorrido postorden
+    public static void postorden(Nodo nodo) {
+
+        if (nodo != null) {
+
+            postorden(nodo.izquierdo);
+            postorden(nodo.derecho);
+            System.out.print(nodo.dato + " ");
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        // Crear árbol
+        Nodo raiz = new Nodo(10);
+
+        raiz.izquierdo = new Nodo(5);
+        raiz.derecho = new Nodo(15);
+
+        raiz.izquierdo.izquierdo = new Nodo(3);
+        raiz.izquierdo.derecho = new Nodo(7);
+
+        System.out.println(
+            "===== ÁRBOL BINARIO ====="
+        );
+
+        System.out.print("Preorden: ");
+        preorden(raiz);
+
+        System.out.println();
+
+        System.out.print("Inorden: ");
+        inorden(raiz);
+
+        System.out.println();
+
+        System.out.print("Postorden: ");
+        postorden(raiz);
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== ÁRBOL BINARIO =====
+
+Preorden:
+10 5 3 7 15
+
+Inorden:
+3 5 7 10 15
+
+Postorden:
+3 7 5 15 10
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Cálculo de la suma de nodos en un árbol
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema necesita calcular la suma total de todos
+        los valores almacenados en un árbol binario
+        utilizando recursividad.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear un árbol binario.
+
+2. Definir una función recursiva:
+
+a. Si el nodo es nulo, retornar 0.
+
+b. Retornar valor del nodo +
+   suma izquierda +
+   suma derecha.
+
+3. Mostrar el resultado total.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    static class Nodo {
+
+        int dato;
+        Nodo izquierdo;
+        Nodo derecho;
+
+        Nodo(int dato) {
+
+            this.dato = dato;
+
+        }
+
+    }
+
+    // Función para sumar nodos
+    public static int sumar(Nodo nodo) {
+
+        if (nodo == null) {
+
+            return 0;
+
+        }
+
+        return nodo.dato +
+               sumar(nodo.izquierdo) +
+               sumar(nodo.derecho);
+
+    }
+
+    public static void main(String[] args) {
+
+        Nodo raiz = new Nodo(10);
+
+        raiz.izquierdo = new Nodo(5);
+        raiz.derecho = new Nodo(15);
+
+        raiz.izquierdo.izquierdo = new Nodo(3);
+        raiz.izquierdo.derecho = new Nodo(7);
+
+        System.out.println(
+            "===== SUMA DE NODOS ====="
+        );
+
+        int total = sumar(raiz);
+
+        System.out.println(
+            "Suma total: " + total
+        );
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== SUMA DE NODOS =====
+
+Suma total: 40
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>
+      Retos
+    </h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Contar nodos de un árbol
+      </h3>
+
+      <p>
+        Crear un programa que cuente la cantidad total
+        de nodos en un árbol binario.
+      </p>
+
+      <h4>
+        Pistas
+      </h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa recursividad.
+        </li>
+
+        <li>
+          Cuenta el nodo actual +
+          nodos izquierdos +
+          nodos derechos.
+        </li>
+
+        <li>
+          Caso base: nodo nulo.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== CONTEO DE NODOS =====
+
+Total de nodos: 5
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Altura de un árbol
+      </h3>
+
+      <p>
+        Determinar la altura de un árbol binario
+        (la longitud del camino más largo
+        desde la raíz hasta una hoja).
+      </p>
+
+      <h4>
+        Pistas
+      </h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa recursividad.
+        </li>
+
+        <li>
+          Altura = 1 +
+          máximo entre altura izquierda y derecha.
+        </li>
+
+        <li>
+          Caso base: árbol vacío.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== ALTURA DEL ÁRBOL =====
+
+Altura: 3
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con los arboles binarios.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/MmA9ZJJhiYM"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

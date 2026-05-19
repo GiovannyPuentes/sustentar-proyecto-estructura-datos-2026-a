@@ -1,0 +1,525 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 10
+    </span>
+
+    <h1>
+      Árboles balanceados — AVL
+    </h1>
+
+    <p>
+      Árboles AVL, balanceo automático, rotaciones,
+      operaciones y aplicaciones.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>Definición de árbol AVL</h3>
+
+      <p>
+        Un árbol AVL es un árbol binario de búsqueda (BST) auto-balanceado, donde la diferencia de altura entre el subárbol izquierdo y derecho de cualquier nodo no puede ser mayor a 1. Esto garantiza que el árbol siempre se mantenga equilibrado.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Propiedad fundamental del AVL</h3>
+
+      <ul class="professional-list">
+        <li>Es un BST: Izquierda &lt; Raíz &lt; Derecha.</li>
+        <li>Se mantiene balanceado automáticamente.</li>
+        <li>Factor de balance ∈ {-1, 0, 1}.</li>
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Operaciones básicas de un AVL</h3>
+
+      <ul class="professional-list">
+        <li><strong>Insertar:</strong> Inserta como BST y luego balancea.</li>
+        <li><strong>Eliminar:</strong> Elimina como BST y luego balancea.</li>
+        <li><strong>Rotar:</strong> Corrige desbalances (LL, RR, LR, RL).</li>
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Características del AVL</h3>
+
+      <ul class="professional-list">
+        <li>Altura balanceada.</li>
+        <li>Búsqueda eficiente garantizada.</li>
+        <li>Uso de rotaciones.</li>
+        <li>Más estricto que BST.</li>
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Ventajas del AVL</h3>
+
+      <ul class="professional-list">
+        <li>Siempre O(log n).</li>
+        <li>Búsquedas muy rápidas.</li>
+        <li>No se desbalancea.</li>
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Desventajas del AVL</h3>
+
+      <ul class="professional-list">
+        <li>Implementación más compleja.</li>
+        <li>Más operaciones (rotaciones).</li>
+        <li>Inserciones más costosas que BST.</li>
+      </ul>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+        <li>Sistemas de bases de datos.</li>
+        <li>Índices en memoria.</li>
+        <li>Motores de búsqueda.</li>
+        <li>Sistemas que requieren datos ordenados rápidos.</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 1: Inserción en un árbol AVL</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema inserta valores en un árbol AVL y automáticamente realiza rotaciones para mantener el equilibrio.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Insertar como en BST.
+
+2. Calcular altura del nodo.
+
+3. Obtener factor de balance.
+
+4. Si está desbalanceado:
+a. Aplicar rotación correspondiente (LL, RR, LR, RL).
+
+5. Mostrar el árbol balanceado.
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+        <span>Java</span>
+        <button class="copy-btn">Copiar código</button>
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+    static class Nodo {
+        int dato;
+        int altura;
+        Nodo izquierdo, derecho;
+
+        Nodo(int dato) {
+            this.dato = dato;
+            this.altura = 1;
+        }
+    }
+
+    static int altura(Nodo n) {
+        if (n == null) return 0;
+        return n.altura;
+    }
+
+    static int balance(Nodo n) {
+        if (n == null) return 0;
+        return altura(n.izquierdo) - altura(n.derecho);
+    }
+
+    static Nodo rotarDerecha(Nodo y) {
+        Nodo x = y.izquierdo;
+        Nodo T2 = x.derecho;
+
+        x.derecho = y;
+        y.izquierdo = T2;
+
+        y.altura = Math.max(altura(y.izquierdo), altura(y.derecho)) + 1;
+        x.altura = Math.max(altura(x.izquierdo), altura(x.derecho)) + 1;
+
+        return x;
+    }
+
+    static Nodo rotarIzquierda(Nodo x) {
+        Nodo y = x.derecho;
+        Nodo T2 = y.izquierdo;
+
+        y.izquierdo = x;
+        x.derecho = T2;
+
+        x.altura = Math.max(altura(x.izquierdo), altura(x.derecho)) + 1;
+        y.altura = Math.max(altura(y.izquierdo), altura(y.derecho)) + 1;
+
+        return y;
+    }
+
+    static Nodo insertar(Nodo nodo, int dato) {
+        if (nodo == null) return new Nodo(dato);
+
+        if (dato < nodo.dato) {
+            nodo.izquierdo = insertar(nodo.izquierdo, dato);
+        } else if (dato > nodo.dato) {
+            nodo.derecho = insertar(nodo.derecho, dato);
+        } else {
+            return nodo;
+        }
+
+        nodo.altura = Math.max(altura(nodo.izquierdo), altura(nodo.derecho)) + 1;
+
+        int balance = balance(nodo);
+
+        if (balance > 1 && dato < nodo.izquierdo.dato)
+            return rotarDerecha(nodo);
+
+        if (balance < -1 && dato > nodo.derecho.dato)
+            return rotarIzquierda(nodo);
+
+        if (balance > 1 && dato > nodo.izquierdo.dato) {
+            nodo.izquierdo = rotarIzquierda(nodo.izquierdo);
+            return rotarDerecha(nodo);
+        }
+
+        if (balance < -1 && dato < nodo.derecho.dato) {
+            nodo.derecho = rotarDerecha(nodo.derecho);
+            return rotarIzquierda(nodo);
+        }
+
+        return nodo;
+    }
+
+    static void inorden(Nodo nodo) {
+        if (nodo != null) {
+            inorden(nodo.izquierdo);
+            System.out.print(nodo.dato + " ");
+            inorden(nodo.derecho);
+        }
+    }
+
+    public static void main(String[] args) {
+        Nodo raiz = null;
+        raiz = insertar(raiz, 10);
+        raiz = insertar(raiz, 20);
+        raiz = insertar(raiz, 30);
+
+        System.out.println("===== ÁRBOL AVL =====");
+        System.out.print("Recorrido en inorden: ");
+        inorden(raiz);
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== ÁRBOL AVL =====
+Recorrido en inorden: 10 20 30
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 2: Eliminación en un árbol AVL</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Se elimina un nodo y el árbol se vuelve a balancear automáticamente.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Eliminar como en BST.
+
+2. Actualizar altura.
+
+3. Calcular balance.
+
+4. Aplicar rotaciones si es necesario.
+
+5. Mostrar árbol balanceado.
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+        <span>Java</span>
+        <button class="copy-btn">Copiar código</button>
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+    static class Nodo {
+        int dato;
+        int altura;
+        Nodo izquierdo, derecho;
+
+        Nodo(int dato) {
+            this.dato = dato;
+            this.altura = 1;
+        }
+    }
+
+    static int altura(Nodo n) {
+        if (n == null) return 0;
+        return n.altura;
+    }
+
+    static int balance(Nodo n) {
+        if (n == null) return 0;
+        return altura(n.izquierdo) - altura(n.derecho);
+    }
+
+    static Nodo rotarDerecha(Nodo y) {
+        Nodo x = y.izquierdo;
+        Nodo T2 = x.derecho;
+        x.derecho = y;
+        y.izquierdo = T2;
+        y.altura = Math.max(altura(y.izquierdo), altura(y.derecho)) + 1;
+        x.altura = Math.max(altura(x.izquierdo), altura(x.derecho)) + 1;
+        return x;
+    }
+
+    static Nodo rotarIzquierda(Nodo x) {
+        Nodo y = x.derecho;
+        Nodo T2 = y.izquierdo;
+        y.izquierdo = x;
+        x.derecho = T2;
+        x.altura = Math.max(altura(x.izquierdo), altura(x.derecho)) + 1;
+        y.altura = Math.max(altura(y.izquierdo), altura(y.derecho)) + 1;
+        return y;
+    }
+
+    static Nodo minimo(Nodo nodo) {
+        while (nodo.izquierdo != null) {
+            nodo = nodo.izquierdo;
+        }
+        return nodo;
+    }
+
+    static Nodo eliminar(Nodo raiz, int dato) {
+        if (raiz == null) return raiz;
+
+        if (dato < raiz.dato) {
+            raiz.izquierdo = eliminar(raiz.izquierdo, dato);
+        } else if (dato > raiz.dato) {
+            raiz.derecho = eliminar(raiz.derecho, dato);
+        } else {
+            if (raiz.izquierdo == null || raiz.derecho == null) {
+                Nodo temp = (raiz.izquierdo != null) ? raiz.izquierdo : raiz.derecho;
+                if (temp == null) {
+                    raiz = null;
+                } else {
+                    raiz = temp;
+                }
+            } else {
+                Nodo sucesor = minimo(raiz.derecho);
+                raiz.dato = sucesor.dato;
+                raiz.derecho = eliminar(raiz.derecho, sucesor.dato);
+            }
+        }
+
+        if (raiz == null) return raiz;
+
+        raiz.altura = Math.max(altura(raiz.izquierdo), altura(raiz.derecho)) + 1;
+
+        int balance = balance(raiz);
+
+        if (balance > 1 && balance(raiz.izquierdo) >= 0)
+            return rotarDerecha(raiz);
+
+        if (balance > 1 && balance(raiz.izquierdo) < 0) {
+            raiz.izquierdo = rotarIzquierda(raiz.izquierdo);
+            return rotarDerecha(raiz);
+        }
+
+        if (balance < -1 && balance(raiz.derecho) <= 0)
+            return rotarIzquierda(raiz);
+
+        if (balance < -1 && balance(raiz.derecho) > 0) {
+            raiz.derecho = rotarDerecha(raiz.derecho);
+            return rotarIzquierda(raiz);
+        }
+
+        return raiz;
+    }
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+Árbol balanceado después de eliminar un nodo
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <div class="challenge-card">
+
+      <h3>Reto 1: Búsqueda en un AVL</h3>
+
+      <p>Buscar un valor en un árbol AVL.</p>
+
+      <h4>Pistas</h4>
+      <ul class="professional-list">
+        <li>Igual que BST.</li>
+        <li>Aprovecha el orden.</li>
+        <li>Recorre izquierda o derecha.</li>
+      </ul>
+
+      <div class="output-container">
+        <div class="output-header">Salida esperada</div>
+<pre class="output-console">
+===== BÚSQUEDA EN AVL ===== 
+Buscando: 20
+Resultado: Encontrado
+</pre>
+      </div>
+
+    </div>
+
+    <div class="challenge-card">
+
+      <h3>Reto 2: Mostrar altura del árbol</h3>
+
+      <p>Mostrar la altura del árbol AVL después de inserciones.</p>
+
+      <h4>Pistas</h4>
+      <ul class="professional-list">
+        <li>Usa el atributo altura.</li>
+        <li>Se actualiza en cada inserción.</li>
+      </ul>
+
+      <div class="output-container">
+        <div class="output-header">Salida esperada</div>
+<pre class="output-console">
+===== ALTURA DEL AVL ===== 
+Altura del árbol: 2
+</pre>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con los Árboles balanceados — AVL.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/OZEdEbpBWRM"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

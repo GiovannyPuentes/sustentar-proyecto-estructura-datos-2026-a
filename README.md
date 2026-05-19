@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🛒 Sistema de Turnos — Tienda Mi Tierrita 24/7
 
 Sistema web para registrar personas, clasificar solicitudes por categoría y controlar el estado de cada turno de atención.
@@ -175,3 +176,7 @@ Con ese único comando se levantan MySQL, el backend y el frontend automáticame
 ---
 
 Estructura de Datos — 2026
+=======
+# sustentar-proyecto-estructura-datos-2026-a
+sustentar-proyecto-estructura-datos-2026-a
+>>>>>>> 29d9f295936357f692e392677439b0744ab623d7

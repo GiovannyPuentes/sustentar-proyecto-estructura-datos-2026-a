@@ -1,0 +1,834 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 3
+    </span>
+
+    <h1>
+      Listas enlazadas simples
+    </h1>
+
+    <p>
+      Fundamentos, nodos, operaciones básicas y aplicaciones
+      de las listas enlazadas simples en programación.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>Definición</h3>
+
+      <p>
+        Una lista enlazada simple es una estructura de datos lineal
+        formada por nodos. Cada nodo contiene dos partes:
+        el dato y una referencia al siguiente nodo de la lista.
+        El último nodo apunta a null,
+        lo que indica que no existen más elementos.
+      </p>
+
+    </div>
+
+    <!-- CONCEPTO DE NODO -->
+
+    <div class="content-card">
+
+      <h3>Concepto de nodo</h3>
+
+      <p>
+        Un nodo es la unidad básica de una lista enlazada.
+        Está compuesto por:
+      </p>
+
+      <ul class="professional-list">
+
+        <li>
+          dato: la información que se almacena.
+        </li>
+
+        <li>
+          siguiente: la referencia al siguiente nodo de la lista.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- NODO CABEZA -->
+
+    <div class="content-card">
+
+      <h3>Nodo cabeza</h3>
+
+      <p>
+        El primer nodo de la lista se llama cabeza o head.
+        Desde este nodo se puede recorrer toda la estructura
+        siguiendo las referencias al siguiente elemento.
+      </p>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de las listas enlazadas simples
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          No almacenan sus elementos en posiciones contiguas de memoria.
+        </li>
+
+        <li>
+          Cada nodo apunta únicamente al siguiente.
+        </li>
+
+        <li>
+          El tamaño puede crecer o disminuir dinámicamente.
+        </li>
+
+        <li>
+          El acceso a un elemento no es directo como en un array;
+          se debe recorrer la lista.
+        </li>
+
+        <li>
+          Son útiles cuando se necesitan inserciones
+          y eliminaciones frecuentes.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>Ventajas</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Permiten añadir o eliminar elementos
+          sin mover toda la estructura.
+        </li>
+
+        <li>
+          Se adaptan bien a cambios en la cantidad de datos.
+        </li>
+
+        <li>
+          Son más flexibles que los arrays
+          en escenarios dinámicos.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>Desventajas</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          El acceso a un elemento específico
+          es más lento que en un array.
+        </li>
+
+        <li>
+          Requieren memoria adicional
+          para guardar las referencias.
+        </li>
+
+        <li>
+          El recorrido debe hacerse nodo por nodo.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- OPERACIONES -->
+
+    <div class="content-card">
+
+      <h3>Operaciones básicas</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Insertar al inicio
+        </li>
+
+        <li>
+          Insertar al final
+        </li>
+
+        <li>
+          Recorrer
+        </li>
+
+        <li>
+          Buscar
+        </li>
+
+        <li>
+          Contar elementos
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Listas de tareas.
+        </li>
+
+        <li>
+          Historial de acciones.
+        </li>
+
+        <li>
+          Gestión de estudiantes.
+        </li>
+
+        <li>
+          Colecciones que cambian constantemente.
+        </li>
+
+        <li>
+          Implementación de otras estructuras
+          como pilas y colas.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Registro de estudiantes en una lista enlazada simple
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema académico necesita guardar los nombres
+        de varios estudiantes en una lista enlazada simple.
+        Luego debe recorrer la lista completa y mostrar
+        cuántos estudiantes fueron registrados.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista enlazada simple vacía.
+2. Agregar varios nombres de estudiantes al final.
+3. Contar la cantidad total de estudiantes.
+4. Recorrer la lista desde el primer nodo hasta el final.
+5. Mostrar cada nombre con su posición.
+6. Mostrar la cantidad total registrada.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    // Clase Nodo
+    static class Nodo {
+
+        String dato;
+        Nodo siguiente;
+
+        Nodo(String dato) {
+
+            this.dato = dato;
+            this.siguiente = null;
+
+        }
+
+    }
+
+    // Clase ListaEnlazadaSimple
+    static class ListaEnlazadaSimple {
+
+        private Nodo cabeza;
+
+        // Insertar al final
+        public void agregarAlFinal(String dato) {
+
+            Nodo nuevo = new Nodo(dato);
+
+            if (cabeza == null) {
+
+                cabeza = nuevo;
+
+            } else {
+
+                Nodo actual = cabeza;
+
+                while (actual.siguiente != null) {
+
+                    actual = actual.siguiente;
+
+                }
+
+                actual.siguiente = nuevo;
+
+            }
+
+        }
+
+        // Contar elementos
+        public int contar() {
+
+            int contador = 0;
+            Nodo actual = cabeza;
+
+            while (actual != null) {
+
+                contador++;
+                actual = actual.siguiente;
+
+            }
+
+            return contador;
+
+        }
+
+        // Recorrer e imprimir
+        public void recorrer() {
+
+            Nodo actual = cabeza;
+            int posicion = 1;
+
+            while (actual != null) {
+
+                System.out.println(
+                    posicion + ". " + actual.dato
+                );
+
+                posicion++;
+                actual = actual.siguiente;
+
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        ListaEnlazadaSimple estudiantes =
+            new ListaEnlazadaSimple();
+
+        estudiantes.agregarAlFinal("Carlos");
+        estudiantes.agregarAlFinal("María");
+        estudiantes.agregarAlFinal("Juan");
+        estudiantes.agregarAlFinal("Laura");
+        estudiantes.agregarAlFinal("Andrés");
+
+        System.out.println(
+            "===== REGISTRO DE ESTUDIANTES ====="
+        );
+
+        System.out.println(
+            "Cantidad de estudiantes: " +
+            estudiantes.contar()
+        );
+
+        System.out.println("Listado completo:");
+
+        estudiantes.recorrer();
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== REGISTRO DE ESTUDIANTES =====
+
+Cantidad de estudiantes: 5
+
+Listado completo:
+
+1. Carlos
+2. María
+3. Juan
+4. Laura
+5. Andrés
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Lista de tareas con prioridad
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema de organización de tareas necesita guardar
+        actividades en una lista enlazada simple.
+        La tarea urgente debe insertarse al inicio
+        y las demás al final.
+        Luego se debe mostrar la lista completa
+        y verificar si una tarea específica existe.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista enlazada simple vacía.
+2. Agregar una tarea urgente al inicio.
+3. Agregar otras tareas al final.
+4. Recorrer la lista y mostrar todas las tareas.
+5. Buscar una tarea específica dentro de la lista.
+6. Mostrar si la tarea fue encontrada o no.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    // Clase Nodo
+    static class Nodo {
+
+        String dato;
+        Nodo siguiente;
+
+        Nodo(String dato) {
+
+            this.dato = dato;
+            this.siguiente = null;
+
+        }
+
+    }
+
+    // Clase ListaEnlazadaSimple
+    static class ListaEnlazadaSimple {
+
+        private Nodo cabeza;
+
+        // Insertar al inicio
+        public void agregarAlInicio(String dato) {
+
+            Nodo nuevo = new Nodo(dato);
+
+            nuevo.siguiente = cabeza;
+            cabeza = nuevo;
+
+        }
+
+        // Insertar al final
+        public void agregarAlFinal(String dato) {
+
+            Nodo nuevo = new Nodo(dato);
+
+            if (cabeza == null) {
+
+                cabeza = nuevo;
+
+            } else {
+
+                Nodo actual = cabeza;
+
+                while (actual.siguiente != null) {
+
+                    actual = actual.siguiente;
+
+                }
+
+                actual.siguiente = nuevo;
+
+            }
+
+        }
+
+        // Buscar un dato
+        public boolean buscar(String datoBuscado) {
+
+            Nodo actual = cabeza;
+
+            while (actual != null) {
+
+                if (actual.dato.equals(datoBuscado)) {
+
+                    return true;
+
+                }
+
+                actual = actual.siguiente;
+
+            }
+
+            return false;
+
+        }
+
+        // Recorrer e imprimir
+        public void recorrer() {
+
+            Nodo actual = cabeza;
+            int posicion = 1;
+
+            while (actual != null) {
+
+                System.out.println(
+                    posicion + ". " + actual.dato
+                );
+
+                posicion++;
+                actual = actual.siguiente;
+
+            }
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        ListaEnlazadaSimple tareas =
+            new ListaEnlazadaSimple();
+
+        tareas.agregarAlInicio(
+            "Atender solicitud urgente"
+        );
+
+        tareas.agregarAlFinal(
+            "Revisar correo"
+        );
+
+        tareas.agregarAlFinal(
+            "Actualizar base de datos"
+        );
+
+        tareas.agregarAlFinal(
+            "Enviar informe"
+        );
+
+        String tareaBuscada =
+            "Actualizar base de datos";
+
+        System.out.println(
+            "===== LISTA DE TAREAS ====="
+        );
+
+        System.out.println("Listado completo:");
+
+        tareas.recorrer();
+
+        System.out.println(
+            "-----------------------------------"
+        );
+
+        System.out.println(
+            "Tarea buscada: " + tareaBuscada
+        );
+
+        if (tareas.buscar(tareaBuscada)) {
+
+            System.out.println(
+                "Resultado: Tarea encontrada"
+            );
+
+        } else {
+
+            System.out.println(
+                "Resultado: Tarea no encontrada"
+            );
+
+        }
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== LISTA DE TAREAS =====
+
+Listado completo:
+
+1. Atender solicitud urgente
+2. Revisar correo
+3. Actualizar base de datos
+4. Enviar informe
+
+Tarea buscada: Actualizar base de datos
+
+Resultado: Tarea encontrada
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Inventario de contactos
+      </h3>
+
+      <p>
+        Una agenda digital necesita almacenar varios contactos
+        en una lista enlazada simple.
+        El programa debe mostrar todos los contactos registrados
+        y la cantidad total almacenada.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Crea una clase para representar cada nodo.
+        </li>
+
+        <li>
+          El último nodo debe apuntar a null.
+        </li>
+
+        <li>
+          Recorre la lista desde la cabeza hasta el final.
+        </li>
+
+        <li>
+          Lleva un contador para saber cuántos contactos hay.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== INVENTARIO DE CONTACTOS =====
+
+Cantidad de contactos: 4
+
+Listado completo:
+
+1. Ana Torres
+2. Luis Gómez
+3. Camila Pérez
+4. Jorge Ruiz
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Gestión de prioridades
+      </h3>
+
+      <p>
+        Un sistema de trabajo recibe tareas normales
+        y una tarea urgente.
+        La tarea urgente debe quedar al inicio de la lista,
+        mientras que las demás deben agregarse al final.
+        Luego se debe mostrar la lista completa
+        y buscar una tarea específica.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa inserción al inicio para la tarea urgente.
+        </li>
+
+        <li>
+          Usa inserción al final para las tareas normales.
+        </li>
+
+        <li>
+          Recorre la lista para mostrar el orden final.
+        </li>
+
+        <li>
+          Implementa una búsqueda sencilla
+          comparando cadenas de texto.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== GESTIÓN DE PRIORIDADES =====
+
+Lista de tareas:
+
+1. Atender emergencia
+2. Revisar documentos
+3. Preparar informe
+4. Enviar correo
+
+Tarea buscada: Preparar informe
+
+Resultado: Tarea encontrada
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con las listas enlazadas simples.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/f_JpVRrPUFo"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

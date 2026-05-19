@@ -1,0 +1,677 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 6
+    </span>
+
+    <h1>
+      Colas Queue y variantes
+    </h1>
+
+    <p>
+      Implementación de estructuras FIFO,
+      colas circulares, colas de prioridad
+      y aplicaciones prácticas en programación.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de cola (Queue)
+      </h3>
+
+      <p>
+        Una cola es una estructura de datos lineal
+        que sigue el principio FIFO
+        (First In, First Out),
+        es decir, el primer elemento en entrar
+        es el primero en salir.
+        Se puede comparar con una fila de personas,
+        donde el primero en llegar
+        es el primero en ser atendido.
+      </p>
+
+    </div>
+
+    <!-- OPERACIONES -->
+
+    <div class="content-card">
+
+      <h3>
+        Operaciones básicas de una cola
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Enqueue (encolar):</strong>
+          Agrega un elemento al final de la cola.
+        </li>
+
+        <li>
+          <strong>Dequeue (desencolar):</strong>
+          Elimina el elemento que está
+          al frente de la cola.
+        </li>
+
+        <li>
+          <strong>Front (frente):</strong>
+          Muestra el primer elemento
+          sin eliminarlo.
+        </li>
+
+        <li>
+          <strong>isEmpty (vacía):</strong>
+          Verifica si la cola está vacía.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características de la cola
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Sigue el principio FIFO.
+        </li>
+
+        <li>
+          Inserción por un extremo (final)
+          y eliminación por el otro (inicio).
+        </li>
+
+        <li>
+          No permite acceso directo
+          a elementos intermedios.
+        </li>
+
+        <li>
+          Puede implementarse con arreglos
+          o listas enlazadas.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas de la cola
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Ideal para procesos ordenados
+          por llegada.
+        </li>
+
+        <li>
+          Eficiente en inserción
+          y eliminación (O(1)).
+        </li>
+
+        <li>
+          Fácil de implementar y entender.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Desventajas de la cola
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Acceso limitado
+          solo al primer elemento.
+        </li>
+
+        <li>
+          No permite recorrer libremente
+          como otras estructuras.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VARIANTES -->
+
+    <div class="content-card">
+
+      <h3>
+        Variantes de las colas
+      </h3>
+
+      <div class="classification-layout">
+
+        <div class="classification-card">
+
+          <h4>
+            Cola circular
+          </h4>
+
+          <p>
+            El último elemento se conecta
+            con el primero.
+          </p>
+
+          <small>
+            Aprovecha mejor la memoria
+            y evita espacios desperdiciados.
+          </small>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>
+            Cola de prioridad
+          </h4>
+
+          <p>
+            Cada elemento tiene
+            una prioridad.
+          </p>
+
+          <small>
+            Los elementos con mayor prioridad
+            salen primero.
+          </small>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>
+            Cola doble (Deque)
+          </h4>
+
+          <p>
+            Permite insertar y eliminar
+            elementos por ambos extremos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Usos comunes
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Sistemas de atención al cliente (turnos).
+        </li>
+
+        <li>
+          Gestión de procesos
+          en sistemas operativos.
+        </li>
+
+        <li>
+          Envío de documentos
+          a una impresora.
+        </li>
+
+        <li>
+          Transmisión de datos
+          en redes (buffers).
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Sistema de atención de clientes (Queue)
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un banco recibe clientes
+        y los atiende en estricto orden
+        de llegada,
+        siguiendo el principio FIFO.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una cola vacía.
+2. Encolar varios clientes conforme llegan.
+3. Mostrar el cliente que está al frente.
+4. Desencolar al cliente atendido.
+5. Mostrar el siguiente cliente en la fila.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Main {
+
+    public static void main(String args[]) {
+
+        Queue<String> clientes =
+            new LinkedList<>();
+
+        clientes.add("Cliente 1");
+        clientes.add("Cliente 2");
+        clientes.add("Cliente 3");
+        clientes.add("Cliente 4");
+
+        System.out.println(
+            "===== SISTEMA DE ATENCIÓN ====="
+        );
+
+        System.out.println(
+            "Siguiente en la fila: " +
+            clientes.peek()
+        );
+
+        clientes.poll();
+
+        System.out.println(
+            "Cliente atendido."
+        );
+
+        System.out.println(
+            "Nuevo siguiente en la fila: " +
+            clientes.peek()
+        );
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== SISTEMA DE ATENCIÓN =====
+
+Siguiente en la fila: Cliente 1
+
+Cliente atendido.
+
+Nuevo siguiente en la fila: Cliente 2
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Sistema de urgencias médicas (PriorityQueue)
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un hospital recibe pacientes en urgencias.
+        Los pacientes con mayor gravedad
+        (prioridad más alta)
+        deben ser atendidos primero,
+        independientemente de su orden de llegada.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>
+        Pseudocódigo explicativo
+      </h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una cola de prioridad vacía.
+2. Registrar pacientes asignándoles un nivel de prioridad.
+3. Atender al paciente con mayor prioridad.
+4. Eliminar al paciente atendido.
+5. Mostrar el próximo paciente a atender.
+
+FIN.
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+import java.util.PriorityQueue;
+
+public class Main {
+
+    public static void main(String args[]) {
+
+        PriorityQueue<String> pacientes =
+            new PriorityQueue<>();
+
+        pacientes.add(
+            "Prioridad 3 - Paciente A"
+        );
+
+        pacientes.add(
+            "Prioridad 1 - Paciente B"
+        );
+
+        pacientes.add(
+            "Prioridad 2 - Paciente C"
+        );
+
+        System.out.println(
+            "===== SISTEMA DE URGENCIAS ====="
+        );
+
+        System.out.println(
+            "Paciente en atención: " +
+            pacientes.peek()
+        );
+
+        pacientes.poll();
+
+        System.out.println(
+            "Paciente atendido."
+        );
+
+        System.out.println(
+            "Siguiente paciente: " +
+            pacientes.peek()
+        );
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== SISTEMA DE URGENCIAS =====
+
+Paciente en atención:
+Prioridad 1 - Paciente B
+
+Paciente atendido.
+
+Siguiente paciente:
+Prioridad 2 - Paciente C
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Gestión de impresión
+      </h3>
+
+      <p>
+        Una impresora recibe documentos
+        en una cola.
+        Los documentos se imprimen
+        en el orden en que fueron enviados.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una cola para almacenar documentos.
+        </li>
+
+        <li>
+          Cada documento se agrega al final.
+        </li>
+
+        <li>
+          El primero en la cola
+          es el primero en imprimirse.
+        </li>
+
+        <li>
+          Simula la impresión
+          eliminando elementos.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== COLA DE IMPRESIÓN =====
+
+Documentos en cola:
+
+Doc1
+Doc2
+Doc3
+
+Documento en impresión: Doc1
+
+Imprimiendo...
+
+Siguiente documento: Doc2
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Cola circular de turnos
+      </h3>
+
+      <p>
+        Un sistema de turnos utiliza
+        una cola circular
+        para atender usuarios
+        de forma continua.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Implementa una estructura circular.
+        </li>
+
+        <li>
+          El último elemento debe conectarse
+          con el primero.
+        </li>
+
+        <li>
+          Recorre una sola vuelta completa.
+        </li>
+
+        <li>
+          Simula el avance del turno.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== TURNOS =====
+
+Turnos en el sistema circular:
+
+Turno 1
+Turno 2
+Turno 3
+
+Avanzando sistema de turnos...
+
+Turno actual en atención: Turno 1
+
+Siguiente en preparación: Turno 2
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con el tema.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/2UP4nPdx-Go"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

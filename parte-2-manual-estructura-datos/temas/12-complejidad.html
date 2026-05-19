@@ -1,0 +1,498 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 12
+    </span>
+
+    <h1>
+      Complejidad algorítmica
+    </h1>
+
+    <p>
+      La complejidad algorítmica es una medida que indica cuánto tiempo y/o espacio requiere un algoritmo para ejecutarse en función del tamaño de la entrada (n).
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Definición de complejidad algorítmica
+      </h3>
+
+      <p>
+        La complejidad algorítmica es una medida que indica cuánto tiempo y/o espacio requiere un algoritmo para ejecutarse en función del tamaño de la entrada (n).
+      </p>
+
+    </div>
+
+    <!-- TIPOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Tipos de complejidad
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Complejidad temporal:</strong>
+          Mide el tiempo que tarda un algoritmo en ejecutarse.
+        </li>
+
+        <li>
+          <strong>Complejidad espacial:</strong>
+          Mide la cantidad de memoria que utiliza.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- NOTACIÓN BIG-O -->
+
+    <div class="content-card">
+
+      <h3>
+        Notación Big-O (O grande)
+      </h3>
+
+      <p>
+        Se utiliza para expresar el comportamiento del algoritmo en el peor de los casos.
+      </p>
+
+      <p>
+        Ejemplos comunes:
+      </p>
+
+      <ul class="professional-list">
+
+        <li>
+          O(1) — Constante
+        </li>
+
+        <li>
+          O(log n) → Logarítmica
+        </li>
+
+        <li>
+          O(n) → Lineal
+        </li>
+
+        <li>
+          O(n log n) → Lineal logarítmica
+        </li>
+
+        <li>
+          O(n^2) → Cuadrática
+        </li>
+
+      </ul>
+
+      <p>
+        Orden de crecimiento (de mejor a peor):
+      </p>
+
+      <p>
+        O(1) < O(log n) < O(n) < O(n log n) < O(n^2)
+      </p>
+
+    </div>
+
+    <!-- CASOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Casos de análisis
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          <strong>Mejor caso:</strong>
+          ejecución más rápida posible
+        </li>
+
+        <li>
+          <strong>Caso promedio:</strong>
+          comportamiento habitual
+        </li>
+
+        <li>
+          <strong>Peor caso:</strong>
+          ejecución más lenta
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          No mide tiempo real (segundos).
+        </li>
+
+        <li>
+          Depende del tamaño de entrada.
+        </li>
+
+        <li>
+          Permite comparar algoritmos.
+        </li>
+
+        <li>
+          Ignora constantes y términos menores.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Ventajas
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Permite elegir algoritmos eficientes.
+        </li>
+
+        <li>
+          Ayuda a optimizar código.
+        </li>
+
+        <li>
+          Es independiente del hardware.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- DESVENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Desventajas
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          No muestra tiempo exacto.
+        </li>
+
+        <li>
+          Puede ser abstracto.
+        </li>
+
+        <li>
+          Requiere análisis matemático.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>
+        Usos comunes
+      </h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Optimización de programas.
+        </li>
+
+        <li>
+          Análisis de rendimiento.
+        </li>
+
+        <li>
+          Comparación de algoritmos.
+        </li>
+
+        <li>
+          Diseño de software eficiente.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLOS -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplos
+    </h2>
+
+    <!-- EJEMPLO 1 -->
+
+    <div class="content-card">
+
+      <h3>
+        Ejemplo 1: Complejidad constante O(1)
+      </h3>
+
+      <p>
+        Un sistema accede directamente a un elemento de un arreglo sin importar su tamaño.
+      </p>
+
+      <h4>Pseudocódigo explicativo</h4>
+
+      <pre class="pseudo-code">
+INICIO
+
+1. Tener un arreglo. 
+
+2. Acceder a una posición específica. 
+
+3. Mostrar el valor. FIN
+      </pre>
+
+      <div class="code-header">
+        <span>Java</span>
+        <button class="copy-btn">Copiar código</button>
+      </div>
+
+      <pre class="code-block"><code>
+public class Main {
+    public static void main(String[] args) {
+        int[] arreglo = {10, 20, 30, 40, 50};
+        System.out.println("Elemento en posición 2: " + arreglo[2]);
+    }
+}
+      </code></pre>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+        <pre class="output-console">
+Elemento en posición 2: 30
+        </pre>
+
+      </div>
+
+    </div>
+
+    <!-- EJEMPLO 2 -->
+
+    <div class="content-card">
+
+      <h3>
+        Ejemplo 2: Complejidad lineal O(n)
+      </h3>
+
+      <p>
+        Un sistema recorre todos los elementos de un arreglo para mostrarlos.
+      </p>
+
+      <h4>Pseudocódigo explicativo</h4>
+
+      <pre class="pseudo-code">
+INICIO
+
+1. Tener un arreglo. 
+
+2. Recorrer todos los elementos. 
+
+3. Mostrar cada uno. FIN
+      </pre>
+
+      <div class="code-header">
+        <span>Java</span>
+        <button class="copy-btn">Copiar código</button>
+      </div>
+
+      <pre class="code-block"><code>
+public class Main {
+    public static void main(String[] args) {
+        int[] arreglo = {10, 20, 30, 40, 50};
+
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.println(arreglo[i]);
+        }
+    }
+}
+      </code></pre>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+        <pre class="output-console">
+10
+20
+30
+40
+50
+        </pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>
+      Retos
+    </h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Complejidad cuadrática O(n²)
+      </h3>
+
+      <p>
+        Crear un programa que compare todos los elementos de un arreglo con todos los demás.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>Usar dos ciclos anidados.</li>
+        <li>Cada ciclo recorre n elementos.</li>
+        <li>n × n = n².</li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+        <pre class="output-console">
+Comparaciones realizadas: 25
+        </pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Identificar la complejidad
+      </h3>
+
+      <p>
+        Analizar el siguiente código y determinar su complejidad:
+      </p>
+
+      <div class="code-block"><code>
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        System.out.println(i + " " + j);
+    }
+}
+      </code></div>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>Hay dos ciclos.</li>
+        <li>Cada uno recorre n veces.</li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+        <pre class="output-console">
+Complejidad: O(n²)
+        </pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con la complejidad algoritmica.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/UPDjjuz1Hkw"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

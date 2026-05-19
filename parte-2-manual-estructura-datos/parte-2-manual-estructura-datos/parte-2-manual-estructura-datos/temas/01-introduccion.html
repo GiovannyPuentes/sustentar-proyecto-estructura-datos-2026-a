@@ -1,0 +1,747 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 1
+    </span>
+
+    <h1>
+      Introducción a las estructuras de datos
+    </h1>
+
+    <p>
+      Fundamentos, clasificación, importancia y aplicaciones
+      de las estructuras de datos en programación.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+    <!-- DEFINICIÓN -->
+
+    <div class="content-card">
+
+      <h3>Definición</h3>
+
+      <p>
+        Una estructura de datos es una forma de organizar,
+        almacenar y gestionar información dentro de un programa
+        para facilitar su acceso, modificación y procesamiento
+        de manera eficiente.
+      </p>
+
+    </div>
+
+    <!-- DIFERENCIA -->
+
+    <div class="content-card">
+
+      <h3>
+        Diferencia entre estructura de datos y algoritmo
+      </h3>
+
+      <div class="comparison-layout">
+
+        <div class="comparison-box">
+
+          <h4>
+            Estructura de datos
+          </h4>
+
+          <p>
+            Define cómo se almacenan y organizan los datos.
+          </p>
+
+        </div>
+
+        <div class="comparison-box">
+
+          <h4>
+            Algoritmo
+          </h4>
+
+          <p>
+            Define los pasos que se siguen para trabajar
+            con esos datos.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="note-box">
+
+        Ambos se complementan:
+        la estructura organiza la información
+        y el algoritmo la procesa.
+
+      </div>
+
+    </div>
+
+    <!-- IMPORTANCIA -->
+
+    <div class="content-card">
+
+      <h3>Importancia</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Permiten optimizar el rendimiento de los programas.
+        </li>
+
+        <li>
+          Facilitan el manejo de grandes cantidades de información.
+        </li>
+
+        <li>
+          Mejoran la claridad, orden y mantenimiento del código.
+        </li>
+
+        <li>
+          Ayudan a resolver problemas de forma más eficiente.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>
+        Características principales
+      </h3>
+
+      <div class="feature-layout">
+
+        <div class="feature-item">
+
+          <h4>Organización</h4>
+
+          <p>
+            Establece cómo se ordenan los datos.
+          </p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <h4>Acceso</h4>
+
+          <p>
+            Define cómo se consultan los elementos.
+          </p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <h4>Eficiencia</h4>
+
+          <p>
+            Influye en el tiempo y recursos usados.
+          </p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <h4>Flexibilidad</h4>
+
+          <p>
+            Algunas estructuras permiten crecer o reducirse.
+          </p>
+
+        </div>
+
+        <div class="feature-item">
+
+          <h4>Relación entre datos</h4>
+
+          <p>
+            Puede ser lineal o no lineal.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CLASIFICACIÓN -->
+
+    <div class="content-card">
+
+      <h3>
+        Clasificación general
+      </h3>
+
+      <div class="classification-layout">
+
+        <div class="classification-card">
+
+          <h4>
+            Estructuras lineales
+          </h4>
+
+          <p>
+            Los elementos se organizan en secuencia.
+          </p>
+
+          <small>
+            Arrays, listas, pilas y colas.
+          </small>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>
+            Estructuras no lineales
+          </h4>
+
+          <p>
+            Los elementos no siguen una sola secuencia.
+          </p>
+
+          <small>
+            Árboles y grafos.
+          </small>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>
+            Estructuras estáticas
+          </h4>
+
+          <p>
+            Su tamaño no cambia fácilmente.
+          </p>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>
+            Estructuras dinámicas
+          </h4>
+
+          <p>
+            Su tamaño puede variar durante la ejecución.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- USOS -->
+
+    <div class="content-card">
+
+      <h3>Usos comunes</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Registro de estudiantes, usuarios o productos.
+        </li>
+
+        <li>
+          Gestión de turnos o solicitudes.
+        </li>
+
+        <li>
+          Navegación de historial.
+        </li>
+
+        <li>
+          Organización jerárquica de información.
+        </li>
+
+        <li>
+          Modelado de relaciones complejas como redes o rutas.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 1: Registro de estudiantes
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema básico necesita almacenar nombres de estudiantes,
+        mostrar cuántos hay, identificar el primero y el último,
+        y listar todos los registros.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista de estudiantes.
+2. Obtener la cantidad de estudiantes.
+3. Mostrar la cantidad total.
+4. Mostrar el primer estudiante.
+5. Mostrar el último estudiante.
+6. Recorrer la lista y mostrar todos los nombres.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        // 1. Crear La Lista de estudiantes
+        String[] estudiantes = {
+            "Carlos",
+            "María",
+            "Juan",
+            "Laura",
+            "Andrés"
+        };
+
+        // 2. Obtener la cantidad de estudiantes
+        int total = estudiantes.length;
+
+        // 3. Mostrar información general
+        System.out.println(
+            "===== REGISTRO DE ESTUDIANTES ====="
+        );
+
+        System.out.println(
+            "Total de estudiantes: " + total
+        );
+
+        // 4. Mostrar el primer y el último estudiante
+        System.out.println(
+            "Primer estudiante: " + estudiantes[0]
+        );
+
+        System.out.println(
+            "Último estudiante: " +
+            estudiantes[estudiantes.length - 1]
+        );
+
+        // 5. Recorrer la lista completa
+        System.out.println("Listado completo:");
+
+        for (int i = 0; i < estudiantes.length; i++) {
+
+            System.out.println(
+                (i + 1) + ". " + estudiantes[i]
+            );
+
+        }
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== REGISTRO DE ESTUDIANTES =====
+
+Total de estudiantes: 5
+
+Primer estudiante: Carlos
+
+Último estudiante: Andrés
+
+Listado completo:
+
+1. Carlos
+2. María
+3. Juan
+4. Laura
+5. Andrés
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>
+      Ejemplo 2: Sistema de atención de clientes
+    </h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema de atención recibe clientes y debe atenderlos
+        en orden de llegada, siguiendo la lógica FIFO:
+        primero en entrar, primero en salir.
+      </p>
+
+    </div>
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear una lista de clientes en espera.
+2. Mostrar todos los clientes.
+3. Identificar el primer cliente.
+4. Atender al primer cliente.
+5. Mostrar el cliente atendido.
+6. Mostrar los clientes restantes.
+
+FIN
+</pre>
+
+    </div>
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code>
+public class Main {
+
+    public static void main(String[] args) {
+
+        // 1. Crear la cola de clientes
+        String[] colaClientes = {
+            "Cliente A",
+            "Cliente B",
+            "Cliente C",
+            "Cliente D"
+        };
+
+        // 2. Mostrar el estado inicial
+        System.out.println(
+            "===== SISTEMA DE ATENCIÓN ====="
+        );
+
+        System.out.print(
+            "Clientes en espera: "
+        );
+
+        for (int i = 0; i < colaClientes.length; i++) {
+
+            System.out.print(
+                colaClientes[i]
+            );
+
+            if (i < colaClientes.length - 1) {
+
+                System.out.print(", ");
+
+            }
+
+        }
+
+        System.out.println();
+
+        // 3. Identificar el primer cliente
+        String clienteActual = colaClientes[0];
+
+        System.out.println(
+            "Cliente en turno: " + clienteActual
+        );
+
+        // 4. Atender al cliente
+        String clienteAtendido = clienteActual;
+
+        System.out.println(
+            "Cliente atendido: " + clienteAtendido
+        );
+
+        // 5. Mostrar los clientes restantes
+        System.out.print(
+            "Clientes restantes: "
+        );
+
+        for (int i = 1; i < colaClientes.length; i++) {
+
+            System.out.print(
+                colaClientes[i]
+            );
+
+            if (i < colaClientes.length - 1) {
+
+                System.out.print(", ");
+
+            }
+
+        }
+
+        System.out.println();
+
+    }
+
+}
+</code></pre>
+
+    </div>
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== SISTEMA DE ATENCIÓN =====
+
+Clientes en espera:
+Cliente A, Cliente B, Cliente C, Cliente D
+
+Cliente en turno:
+Cliente A
+
+Cliente atendido:
+Cliente A
+
+Clientes restantes:
+Cliente B, Cliente C, Cliente D
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 1: Catálogo de libros
+      </h3>
+
+      <p>
+        Una biblioteca necesita almacenar una lista de libros
+        y mostrar información básica:
+        cantidad total, primer libro,
+        último libro y listado completo.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa un arreglo de tipo String.
+        </li>
+
+        <li>
+          La cantidad se obtiene con length.
+        </li>
+
+        <li>
+          El primer elemento está en la posición 0.
+        </li>
+
+        <li>
+          El último está en length - 1.
+        </li>
+
+        <li>
+          Recorre la lista con un ciclo for.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== CATÁLOGO DE LIBROS =====
+
+Total de libros: 5
+
+Primer libro: El Quijote
+
+Último libro: Rayuela
+
+Listado:
+
+1. El Quijote
+2. Cien años de soledad
+3. La Odisea
+4. El Principito
+5. Rayuela
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Reto 2: Sistema de turnos
+      </h3>
+
+      <p>
+        Un sistema de turnos recibe solicitudes numeradas.
+        Debe mostrar la cola,
+        atender el primer turno
+        y luego mostrar los turnos restantes.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una estructura tipo cola.
+        </li>
+
+        <li>
+          El primer elemento es el primero en salir.
+        </li>
+
+        <li>
+          Muestra el estado antes y después de atender.
+        </li>
+
+        <li>
+          Recuerda separar correctamente los elementos
+          al imprimirlos.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+===== SISTEMA DE TURNOS =====
+
+Turnos en espera:
+T1, T2, T3, T4
+
+Turno actual:
+T1
+
+Turno atendido:
+T1
+
+Turnos restantes:
+T2, T3, T4
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+  <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con la introduccion a estructura de datos.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/cwRQHcaef5c"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>

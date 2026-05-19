@@ -1,0 +1,637 @@
+<div class="topic-container">
+
+  <!-- HEADER -->
+
+  <div class="topic-header">
+
+    <span class="topic-label">
+      Tema 2
+    </span>
+
+    <h1>Arrays y tipos de datos</h1>
+
+    <p>
+      Fundamentos de tipos de datos en Java, uso de arrays,
+      organización de información y procesamiento de colecciones
+      de valores mediante estructuras lineales.
+    </p>
+
+  </div>
+
+  <!-- DOCUMENTACIÓN -->
+
+  <section class="content-section">
+
+    <h2>Documentación</h2>
+
+<!-- DEFINICIÓN -->
+
+<div class="content-card">
+
+  <h3>
+    Definición de tipo de dato
+  </h3>
+
+  <p>
+    Un tipo de dato indica qué clase de información
+    puede almacenar una variable. En Java,
+    cada variable debe declararse con un tipo específico,
+    lo que ayuda a controlar el valor que se guarda
+    y las operaciones que se pueden realizar con él.
+  </p>
+
+</div>
+    <!-- TIPOS DE DATOS -->
+
+<div class="content-card">
+
+  <h3>Tipos de datos básicos en Java</h3>
+
+  <div class="feature-layout">
+
+    <div class="feature-item">
+
+      <h4>int</h4>
+
+      <p>
+        Almacena números enteros.
+      </p>
+
+    </div>
+
+    <div class="feature-item">
+
+      <h4>double</h4>
+
+      <p>
+        Almacena números decimales.
+      </p>
+
+    </div>
+
+    <div class="feature-item">
+
+      <h4>char</h4>
+
+      <p>
+        Almacena un solo carácter.
+      </p>
+
+    </div>
+
+    <div class="feature-item">
+
+      <h4>String</h4>
+
+      <p>
+        Almacena texto.
+      </p>
+
+    </div>
+
+    <div class="feature-item">
+
+      <h4>boolean</h4>
+
+      <p>
+        Almacena valores lógicos:
+        true o false.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+    <!-- DEFINICIÓN ARRAY -->
+
+    <div class="content-card">
+
+      <h3>Definición de array</h3>
+
+      <p>
+        Un array es una estructura de datos que permite almacenar
+        varios valores del mismo tipo dentro de una sola variable.
+        Cada elemento se guarda en una posición específica llamada
+        índice, y el primer índice siempre es 0.
+      </p>
+
+    </div>
+
+    <!-- CARACTERÍSTICAS -->
+
+    <div class="content-card">
+
+      <h3>Características de los arrays</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Guardan varios datos en una sola estructura.
+        </li>
+
+        <li>
+          Tienen tamaño fijo una vez creados.
+        </li>
+
+        <li>
+          Todos sus elementos deben ser del mismo tipo.
+        </li>
+
+        <li>
+          Se accede a cada elemento mediante su índice.
+        </li>
+
+        <li>
+          Permiten recorrer los datos de forma ordenada.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- VENTAJAS -->
+
+    <div class="content-card">
+
+      <h3>Ventajas de usar arrays</h3>
+
+      <ul class="professional-list">
+
+        <li>
+          Organizan información de manera clara.
+        </li>
+
+        <li>
+          Facilitan el recorrido de datos.
+        </li>
+
+        <li>
+          Permiten realizar cálculos sobre colecciones de valores.
+        </li>
+
+        <li>
+          Son útiles para representar listas, registros,
+          calificaciones, inventarios y muchos otros conjuntos
+          de información.
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- RELACIÓN -->
+
+    <div class="content-card">
+
+      <h3>Relación entre tipos de datos y arrays</h3>
+
+      <div class="classification-layout">
+
+        <div class="classification-card">
+
+          <h4>int[]</h4>
+
+          <p>
+            Para números enteros.
+          </p>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>double[]</h4>
+
+          <p>
+            Para números decimales.
+          </p>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>String[]</h4>
+
+          <p>
+            Para textos.
+          </p>
+
+        </div>
+
+        <div class="classification-card">
+
+          <h4>boolean[]</h4>
+
+          <p>
+            Para valores lógicos.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 1 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 1: Lista de números y suma total</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Se tiene un conjunto de números almacenados en un array.
+        El programa debe recorrerlos, mostrarlos en pantalla y
+        calcular la suma total de todos los elementos.
+      </p>
+
+    </div>
+
+    <!-- PSEUDOCÓDIGO -->
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear un array de números enteros.
+2. Inicializar una variable suma en 0.
+3. Recorrer el array desde la posición 0 hasta la última.
+4. Mostrar cada número.
+5. Acumular cada valor en la variable suma.
+6. Al final, mostrar la suma total.
+
+FIN
+</pre>
+
+    </div>
+
+    <!-- CÓDIGO -->
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code class="language-java">
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Ejemplo 1: Lista de números y suma total
+        int[] numeros = {10, 20, 30, 40, 50};
+
+        int suma = 0;
+
+        System.out.println(
+            "===== LISTA DE NÚMEROS ====="
+        );
+
+        for (int i = 0; i < numeros.length; i++) {
+
+            System.out.println(
+                "Número: " + numeros[i]
+            );
+
+            suma = suma + numeros[i];
+
+        }
+
+        System.out.println();
+
+        System.out.println(
+            "Suma total: " + suma
+        );
+
+    }
+}
+</code></pre>
+
+    </div>
+
+    <!-- SALIDA -->
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== LISTA DE NÚMEROS =====
+
+Número: 10
+Número: 20
+Número: 30
+Número: 40
+Número: 50
+
+Suma total: 150
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- EJEMPLO 2 -->
+
+  <section class="content-section">
+
+    <h2>Ejemplo 2: Calificaciones de un estudiante</h2>
+
+    <div class="content-card">
+
+      <h3>Descripción</h3>
+
+      <p>
+        Un sistema académico almacena varias calificaciones
+        en un array de tipo decimal. Luego calcula el promedio
+        y determina si el estudiante aprobó o no,
+        según una nota mínima de 3.0.
+      </p>
+
+    </div>
+
+    <!-- PSEUDOCÓDIGO -->
+
+    <div class="content-card">
+
+      <h3>Pseudocódigo explicativo</h3>
+
+<pre class="pseudo-code">
+INICIO
+
+1. Crear un array con calificaciones decimales.
+2. Inicializar una variable suma en 0.
+3. Recorrer el array y sumar cada calificación.
+4. Calcular el promedio dividiendo la suma entre la cantidad de notas.
+5. Mostrar cada calificación.
+6. Mostrar el promedio.
+7. Si el promedio es mayor o igual a 3.0, mostrar "Aprobado".
+8. Si no, mostrar "Reprobado".
+
+FIN
+</pre>
+
+    </div>
+
+    <!-- CÓDIGO -->
+
+    <div class="content-card">
+
+      <div class="code-header">
+
+        <span>Java</span>
+
+        <button class="copy-btn">
+          Copiar código
+        </button>
+
+      </div>
+
+<pre class="code-block"><code class="language-java">
+public class Main {
+
+    public static void main(String[] args) {
+
+        // 1. Crear el array con calificaciones decimales
+        double[] calificaciones = {
+            4.5,
+            3.8,
+            4.0,
+            2.5,
+            3.2
+        };
+
+        double suma = 0;
+
+        System.out.println(
+            "===== CALIFICACIONES ====="
+        );
+
+        // 2. Recorrer el array y sumar cada calificación
+        for (int i = 0; i < calificaciones.length; i++) {
+
+            System.out.println(
+                "Nota " + (i + 1) + ": " +
+                calificaciones[i]
+            );
+
+            suma = suma + calificaciones[i];
+
+        }
+
+        // 3. Calcular el promedio
+        double promedio =
+            suma / calificaciones.length;
+
+        System.out.println(
+            "---------------------------"
+        );
+
+        System.out.println(
+            "Promedio: " + promedio
+        );
+
+        // 4. Determinar si aprobó o reprobó
+        if (promedio >= 3.0) {
+
+            System.out.println(
+                "Estado: Aprobado"
+            );
+
+        } else {
+
+            System.out.println(
+                "Estado: Reprobado"
+            );
+
+        }
+
+    }
+}
+</code></pre>
+
+    </div>
+
+    <!-- SALIDA -->
+
+    <div class="output-container">
+
+      <div class="output-header">
+        Salida esperada
+      </div>
+
+<pre class="output-console">
+===== CALIFICACIONES =====
+
+Nota 1: 4.5
+Nota 2: 3.8
+Nota 3: 4.0
+Nota 4: 2.5
+Nota 5: 3.2
+
+Promedio: 3.6
+
+Estado: Aprobado
+</pre>
+
+    </div>
+
+  </section>
+
+  <!-- RETOS -->
+
+  <section class="content-section">
+
+    <h2>Retos</h2>
+
+    <!-- RETO 1 -->
+
+    <div class="challenge-card">
+
+      <h3>Reto 1: Número mayor en un array</h3>
+
+      <p>
+        Dado un conjunto de números almacenados en un array,
+        se debe identificar cuál es el valor mayor y mostrarlo
+        en pantalla.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa una variable llamada mayor.
+        </li>
+
+        <li>
+          Inicialízala con el primer valor del array.
+        </li>
+
+        <li>
+          Recorre el arreglo y compara cada elemento.
+        </li>
+
+        <li>
+          Si un valor es mayor,
+          actualiza la variable.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+Números: 15, 8, 22, 5, 18
+
+Número mayor: 22
+</pre>
+
+      </div>
+
+    </div>
+
+    <!-- RETO 2 -->
+
+    <div class="challenge-card">
+
+      <h3>Reto 2: Contar números pares</h3>
+
+      <p>
+        Dado un array de números enteros,
+        se debe contar cuántos de ellos son pares
+        y mostrar el resultado.
+      </p>
+
+      <h4>Pistas</h4>
+
+      <ul class="professional-list">
+
+        <li>
+          Usa el operador módulo %.
+        </li>
+
+        <li>
+          Un número es par si numero % 2 == 0.
+        </li>
+
+        <li>
+          Lleva un contador para registrar
+          cuántos pares encuentras.
+        </li>
+
+        <li>
+          Recorre todo el array con un ciclo.
+        </li>
+
+      </ul>
+
+      <div class="output-container">
+
+        <div class="output-header">
+          Salida esperada
+        </div>
+
+<pre class="output-console">
+Números: 12, 7, 4, 9, 2, 15
+
+Cantidad de números pares: 3
+</pre>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+ <!-- VIDEO EXPLICATIVO -->
+
+  <section class="content-section">
+
+    <h2>
+      VIDEO EXPLICATIVO
+    </h2>
+
+    <div class="content-card">
+
+      <p>
+        A continuación se muestra un video explicativo relacionado con el tema de los Arrays.
+      </p>
+
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:24px; border:1px solid rgba(255,255,255,0.07); margin-top:20px;">
+
+        <iframe
+          src="https://www.youtube.com/embed/fm7DCP2V3yk"
+          title="Video explicativo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
