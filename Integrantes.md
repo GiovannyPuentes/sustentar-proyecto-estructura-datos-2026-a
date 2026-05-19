@@ -1,3 +1,5 @@
-1: Melannie Lizeth Sanchez Polania
-2: Giovanny Andrey Puentes Alape
-3: Jesus Lopez Charry
+#  Integrantes del Grupo
+
+- Melannie Lizeth Sánchez Polanía
+- Giovanny Andrey Puentes Alape
+- Jesús López Charry
